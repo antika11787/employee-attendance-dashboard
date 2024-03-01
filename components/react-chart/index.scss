@@ -1,0 +1,60 @@
+.home-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+  background-color: #ececec;
+
+  .params {
+    margin-top: 50px;
+    width: 21%;
+    height: 9rem;
+  }
+
+  .work-hour {
+    background-image: linear-gradient(90deg, #47466d 0%, #3d84a7 100%);
+  }
+
+  .late-hour {
+    background-image: linear-gradient(90deg, #3d84a7 0%, #46cdcf 100%);
+  }
+
+  .early-leave {
+    background-image: linear-gradient(90deg, #46cdcf 0%, #abedd8 100%);
+  }
+
+  .overtime {
+    background-image: linear-gradient(90deg, #abedd8 0%, #d2f0e6 100%);
+  }
+
+  .data-card {
+    background-color: #efefef;
+    border-radius: 0.5em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .main-chart {
+    width: 92%;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-chart {
+    width: 50%;
+    height: 20rem;
+    margin-bottom: 50px;
+  }
+
+  .third-chart {
+    width: 40%;
+    height: 20rem;
+    margin-bottom: 50px;
+  }
+}
