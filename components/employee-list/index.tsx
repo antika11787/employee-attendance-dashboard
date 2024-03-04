@@ -13,7 +13,7 @@ const EmployeeList = () => {
     // Function to generate a color based on the initial letter
     const getColor = (initial: string) => {
         // You can define your logic here to assign colors based on initials
-        const colors = ['#ff5733', '#33ff57', '#5733ff', '#ffff33', '#33ffff'];
+        const colors = ['#47466D'];
         const index = initial.charCodeAt(0) % colors.length;
         return colors[index];
     }
@@ -31,7 +31,7 @@ const EmployeeList = () => {
                 <hr className='horizontal-line'></hr>
                 <tbody className='employee-list-table-body'>
                     <tr className='employee-list-table-row-data'>
-                        <td className='employee-list-table-data'>
+                        <td className='employee-list-table-data employee-list-table-data__name'>
                             <div className="circle" style={{ backgroundColor: getColor('J') }}>
                                 {getInitials('John Doe')}
                             </div>
@@ -40,8 +40,10 @@ const EmployeeList = () => {
                         <td className='employee-list-table-data'>12345</td>
                         <td className='employee-list-table-data'>View</td>
                     </tr>
+                    <hr className='horizontal-line'></hr>
+
                     <tr className='employee-list-table-row-data'>
-                        <td className='employee-list-table-data'>
+                        <td className='employee-list-table-data employee-list-table-data__name'>
                             <div className="circle" style={{ backgroundColor: getColor('J') }}>
                                 {getInitials('No Name')}
                             </div>
@@ -50,8 +52,10 @@ const EmployeeList = () => {
                         <td className='employee-list-table-data'>12345</td>
                         <td className='employee-list-table-data'>View</td>
                     </tr>
+                    <hr className='horizontal-line'></hr>
+
                     <tr className='employee-list-table-row-data'>
-                        <td className='employee-list-table-data'>
+                        <td className='employee-list-table-data employee-list-table-data__name'>
                             <div className="circle" style={{ backgroundColor: getColor('J') }}>
                                 {getInitials('John Doe')}
                             </div>
