@@ -1,0 +1,110 @@
+@use "../../styles/_mixins.scss" as *;
+
+.home-container {
+  height: auto;
+  @include page-body;
+
+  .params {
+    margin-top: 50px;
+    width: 21%;
+    height: 5rem;
+    color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .params-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .params-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        .params-heading {
+          margin: 0;
+        }
+
+        .params-value {
+          margin: 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .work-hour {
+    background-image: linear-gradient(90deg, #47466d 0%, #3d84a7 100%);
+  }
+
+  .check-in {
+    background-image: linear-gradient(90deg, #3d84a7 0%, #46cdcf 100%);
+  }
+
+  .late-hour {
+    background-image: linear-gradient(90deg, #46cdcf 0%, #3d84a7 100%);
+  }
+
+  .overtime {
+    background-image: linear-gradient(90deg, #3d84a7 0%, #47466d 100%);
+  }
+
+  .data-card {
+    background-color: #efefef;
+    border-radius: 0.5em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .main-chart {
+    width: 92%;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-chart {
+    width: 50%;
+    height: 20rem;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    .doughnut-heading {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+
+      .doughnut-heading-text {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .doughnut-heading-dropdown-container {
+        display: flex;
+        gap: 10px;
+
+        .doughnut-heading-dropdown {
+          margin: 0;
+          font-size: 14px;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          padding: 2px;
+          background-color: #e7e7e7;
+        }
+      }
+    }
+  }
+
+  .third-chart {
+    width: 40%;
+    height: 20rem;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,62 @@
+.employee-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  .employee-list-heading {
+    margin: 0;
+    padding: 20px 0 0 20px;
+  }
+
+  .employee-list-table {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+
+    .horizontal-line {
+      border: 0.5px solid #d9d9d9;
+    }
+
+    .employee-list-table-header,
+    .employee-list-table-body {
+      // width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .employee-list-table-row,
+      .employee-list-table-row-data {
+        // width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .employee-list-table-data {
+          //   width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .employee-list-table-row-data {
+        background-color: #d9d9d9;
+        border-radius: 0.5em;
+        padding: 10px;
+      }
+    }
+  }
+}

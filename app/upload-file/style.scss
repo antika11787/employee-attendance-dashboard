@@ -1,0 +1,6 @@
+@use "../../styles/_mixins.scss" as *;
+
+.upload-file {
+  height: 100vh;
+  @include page-body;
+}
