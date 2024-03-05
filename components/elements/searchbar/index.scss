@@ -4,16 +4,17 @@
   align-items: center;
 
   .search-input-container {
-    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
-    min-width: 35vw;
+    min-width: 25vw;
     display: flex;
     justify-content: space-between;
     transition: box-shadow 0.3s ease;
 
     &:focus-within {
-      box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 8px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
     }
 
     .search-input {

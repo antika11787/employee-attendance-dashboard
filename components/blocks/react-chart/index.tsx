@@ -139,9 +139,7 @@ const ReactChart = () => {
                         plugins: {
                             title: {
                                 display: false,
-                                // text: 'Employee Attendance',
                             },
-
                         },
                         layout: {
                             padding: 10,

@@ -1,6 +1,6 @@
 const januaryCheckIns = [
   {
-    Employee: "Alice",
+    Employee: "Alice Doe",
     "Employee ID": 10001,
     "Check In": "2024-01-01 08:15:00",
     "Worked Hours (H.M)": 9.5,
@@ -9,7 +9,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.2,
   },
   {
-    Employee: "Bob",
+    Employee: "Bob Marley",
     "Employee ID": 10002,
     "Check In": "2024-01-01 08:05:00",
     "Worked Hours (H.M)": 9.58,
@@ -18,7 +18,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.28,
   },
   {
-    Employee: "Charlie",
+    Employee: "Charlie Kevin",
     "Employee ID": 10003,
     "Check In": "2024-01-01 08:30:00",
     "Worked Hours (H.M)": 9.75,
@@ -27,7 +27,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "David",
+    Employee: "David Junior",
     "Employee ID": 10004,
     "Check In": "2024-01-01 08:20:00",
     "Worked Hours (H.M)": 9.5,
@@ -36,7 +36,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.2,
   },
   {
-    Employee: "Eva",
+    Employee: "Eva Green",
     "Employee ID": 10005,
     "Check In": "2024-01-01 08:10:00",
     "Worked Hours (H.M)": 9.7,
@@ -45,7 +45,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.3,
   },
   {
-    Employee: "Frank",
+    Employee: "Frank Gomez",
     "Employee ID": 10006,
     "Check In": "2024-01-01 08:25:00",
     "Worked Hours (H.M)": 9.75,
@@ -54,7 +54,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "Grace",
+    Employee: "Grace Watson",
     "Employee ID": 10007,
     "Check In": "2024-01-01 08:35:00",
     "Worked Hours (H.M)": 9.8,
@@ -63,7 +63,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Hannah",
+    Employee: "Hannah Cooke",
     "Employee ID": 10008,
     "Check In": "2024-01-01 08:45:00",
     "Worked Hours (H.M)": 9.58,
@@ -72,7 +72,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.28,
   },
   {
-    Employee: "Ivan",
+    Employee: "Ivan Grace",
     "Employee ID": 10009,
     "Check In": "2024-01-01 08:55:00",
     "Worked Hours (H.M)": 9.5,
@@ -81,7 +81,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.2,
   },
   {
-    Employee: "Jack",
+    Employee: "Jack Doe",
     "Employee ID": 10010,
     "Check In": "2024-01-01 08:40:00",
     "Worked Hours (H.M)": 9.8,
@@ -90,7 +90,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Alice",
+    Employee: "Alice Doe",
     "Employee ID": 10001,
     "Check In": "2024-01-02 08:20:00",
     "Worked Hours (H.M)": 9.75,
@@ -99,7 +99,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "Bob",
+    Employee: "Bob Marley",
     "Employee ID": 10002,
     "Check In": "2024-01-02 08:10:00",
     "Worked Hours (H.M)": 9.58,
@@ -108,7 +108,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.28,
   },
   {
-    Employee: "Charlie",
+    Employee: "Charlie Kevin",
     "Employee ID": 10003,
     "Check In": "2024-01-02 08:35:00",
     "Worked Hours (H.M)": 9.8,
@@ -117,7 +117,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "David",
+    Employee: "David Junior",
     "Employee ID": 10004,
     "Check In": "2024-01-02 08:25:00",
     "Worked Hours (H.M)": 9.5,
@@ -126,7 +126,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.2,
   },
   {
-    Employee: "Eva",
+    Employee: "Eva Green",
     "Employee ID": 10005,
     "Check In": "2024-01-02 08:15:00",
     "Worked Hours (H.M)": 9.8,
@@ -135,7 +135,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Frank",
+    Employee: "Frank Gomez",
     "Employee ID": 10006,
     "Check In": "2024-01-02 08:30:00",
     "Worked Hours (H.M)": 9.75,
@@ -144,7 +144,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "Grace",
+    Employee: "Grace Watson",
     "Employee ID": 10007,
     "Check In": "2024-01-02 08:40:00",
     "Worked Hours (H.M)": 9.7,
@@ -153,7 +153,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.3,
   },
   {
-    Employee: "Hannah",
+    Employee: "Hannah Cooke",
     "Employee ID": 10008,
     "Check In": "2024-01-02 08:50:00",
     "Worked Hours (H.M)": 9.8,
@@ -162,7 +162,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Ivan",
+    Employee: "Ivan Grace",
     "Employee ID": 10009,
     "Check In": "2024-01-02 08:45:00",
     "Worked Hours (H.M)": 9.85,
@@ -171,7 +171,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.45,
   },
   {
-    Employee: "Jack",
+    Employee: "Jack Doe",
     "Employee ID": 10010,
     "Check In": "2024-01-02 08:55:00",
     "Worked Hours (H.M)": 9.5,
@@ -180,7 +180,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.2,
   },
   {
-    Employee: "Alice",
+    Employee: "Alice Doe",
     "Employee ID": 10001,
     "Check In": "2024-01-03 08:10:00",
     "Worked Hours (H.M)": 9.8,
@@ -189,7 +189,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Bob",
+    Employee: "Bob Marley",
     "Employee ID": 10002,
     "Check In": "2024-01-03 08:20:00",
     "Worked Hours (H.M)": 9.75,
@@ -198,7 +198,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "Charlie",
+    Employee: "Charlie Kevin",
     "Employee ID": 10003,
     "Check In": "2024-01-03 08:30:00",
     "Worked Hours (H.M)": 9.8,
@@ -207,7 +207,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "David",
+    Employee: "David Junior",
     "Employee ID": 10004,
     "Check In": "2024-01-03 08:40:00",
     "Worked Hours (H.M)": 9.85,
@@ -216,7 +216,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.45,
   },
   {
-    Employee: "Eva",
+    Employee: "Eva Green",
     "Employee ID": 10005,
     "Check In": "2024-01-03 08:50:00",
     "Worked Hours (H.M)": 9.7,
@@ -225,7 +225,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.3,
   },
   {
-    Employee: "Frank",
+    Employee: "Frank Gomez",
     "Employee ID": 10006,
     "Check In": "2024-01-03 08:15:00",
     "Worked Hours (H.M)": 9.8,
@@ -234,7 +234,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.4,
   },
   {
-    Employee: "Grace",
+    Employee: "Grace Watson",
     "Employee ID": 10007,
     "Check In": "2024-01-03 08:25:00",
     "Worked Hours (H.M)": 9.85,
@@ -243,7 +243,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.45,
   },
   {
-    Employee: "Hannah",
+    Employee: "Hannah Cooke",
     "Employee ID": 10008,
     "Check In": "2024-01-03 08:35:00",
     "Worked Hours (H.M)": 9.58,
@@ -252,7 +252,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.28,
   },
   {
-    Employee: "Ivan",
+    Employee: "Ivan Grace",
     "Employee ID": 10009,
     "Check In": "2024-01-03 08:45:00",
     "Worked Hours (H.M)": 9.75,
@@ -261,7 +261,7 @@ const januaryCheckIns = [
     "Over Time (H.M)": 0.35,
   },
   {
-    Employee: "Jack",
+    Employee: "Jack Doe",
     "Employee ID": 10010,
     "Check In": "2024-01-03 08:55:00",
     "Worked Hours (H.M)": 9.5,

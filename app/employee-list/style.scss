@@ -1,13 +1,21 @@
-@use "../../styles/_mixins.scss" as *;
+@use "@/styles/_mixins.scss" as *;
 
 .employee-list-page {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  background-color: #ececec;
+  background-color: #ffffff;
+
+  .employee-list-heading {
+    margin: 0;
+    width: 100%;
+    margin: 50px 0 0 40px;
+    text-align: start;
+  }
 
   .searchbar {
     width: 92%;
@@ -18,12 +26,24 @@
     gap: 30px;
   }
 
-  .employee-list-container {
+  .employee-list-wrapper {
     width: 92%;
     height: auto;
-    margin: 20px;
-    background-color: #ececec;
+    margin: 0 20px;
+    // background-color: #efefef;
     border-radius: 0.5em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 5px 0;
   }
+}
+
+.single-employee-page {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  background-color: #ffffff;
 }

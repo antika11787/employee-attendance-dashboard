@@ -26,7 +26,7 @@ const Sidebar = () => {
                         Dashboard
                     </Link>
                 </div>
-                <div className={`sidebar-menu-item ${pathName.endsWith('/employee-list') ? 'active' : ''}`}>
+                <div className={`sidebar-menu-item ${pathName.includes('/employee-list') ? 'active' : ''}`}>
                     <BsPeople className="sidebar-menu-item-icon" />
                     <Link
                         href={'/employee-list'}
