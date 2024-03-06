@@ -1,9 +1,15 @@
+import UploadFile from '@/components/blocks/upload-file';
+import { TbCloudUpload } from "react-icons/tb";
 import './style.scss';
 
 const UploadFilePage = () => {
     return (
         <div className='upload-file'>
-            <h1>Upload File</h1>
+            <div className='upload-file-heading-container'>
+                <h1 className='upload-file-heading'>Upload File</h1>
+                <TbCloudUpload className='upload-icon' />
+            </div>
+            <UploadFile />
         </div>
     )
 }

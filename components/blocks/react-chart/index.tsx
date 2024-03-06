@@ -1,15 +1,20 @@
 'use client';
 
 import React, { useState, ChangeEventHandler } from "react";
-import { Chart as ChartJS, defaults } from "chart.js/auto";
+import { Chart as ChartJS, registerables, defaults } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import Image from "next/image";
 import Helper from "@/utils/helper";
+import HighLow from "@/data/highLow";
+import 'chartjs-adapter-moment';
 import "./index.scss";
 
 import sourceData from "@/data/sourceData.json";
 import allData from "@/data/allData.json";
 import januaryCheckIns from "@/data/januaryCheckIns";
+import { AgChartsReact } from "ag-charts-react";
+import "ag-charts-enterprise";
+import { AgChartOptions } from "ag-charts-enterprise";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -22,8 +27,14 @@ defaults.plugins.title.font = {
 };
 defaults.plugins.title.color = "black";
 
+interface EmployeeCheckIn {
+    label: string;
+    low: string;
+    high: string;
+}
+
 const ReactChart = () => {
-    const { extractDates, calculateAverageTime } = Helper();
+    const { extractDates, calculateAverageTime, parseTimeString } = Helper();
 
     const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('january');
@@ -42,10 +53,48 @@ const ReactChart = () => {
     const averageEarlyLeaveHour = calculateAverageTime(januaryCheckIns, "Early Leave Hours (H.M)");
     const averageOvertime = calculateAverageTime(januaryCheckIns, "Over Time (H.M)");
 
+    const labels = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.label);
+    const lows = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.low);
+    const highs = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.high);
+
+    // Prepare data for the chart
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Check In Range',
+                data: HighLow.map((checkIn: EmployeeCheckIn) => ({
+                    x: checkIn.label,
+                    y: [checkIn.low, checkIn.high],
+                })),
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+            },
+        ],
+    };
+
+    // Chart options
+    const options = {
+        scales: {
+            x: {
+                type: 'category',
+                offset: true,
+                grid: {
+                    display: false,
+                },
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Check In Time',
+                },
+            },
+        },
+    };
+
     return (
         <div className="home-container">
-            {/* <h3 className="home-heading">Dashboard</h3> */}
-            {/* <div className="info-card"> */}
             <div className="data-card params work-hour">
                 <div className="params-wrapper">
                     <Image src={"/team.png"} alt="work" width={50} height={50} />
@@ -82,31 +131,8 @@ const ReactChart = () => {
                     <Image src={"/absent.png"} alt="work" width={50} height={50} />
                 </div>
             </div>
-            {/* </div> */}
             <div className="data-card main-chart">
-                {/* <Bar
-                    data={{
-                        labels: extractDates(januaryCheckIns),
-                        datasets: [
-                            {
-                                label: "Late Hours",
-                                data: januaryCheckIns.map((data) => data["Late Hours (H.M)"]),
-                                backgroundColor: "#ABEDD8",
-                                borderColor: "#ABEDD8",
-                            },
-                        ],
-                    }}
-                    options={{
-                        plugins: {
-                            title: {
-                                text: "Employee Attendance",
-                            },
-                        },
-                        layout: {
-                            padding: 20,
-                        }
-                    }}
-                /> */}
+                {/* <Bar type="bar" data={data} options={options} />; */}
             </div>
             <div className="data-card second-chart">
                 <div className="doughnut-heading">

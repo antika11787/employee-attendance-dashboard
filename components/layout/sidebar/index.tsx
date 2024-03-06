@@ -1,10 +1,12 @@
 'use client';
 
 import { LuClipboardList } from "react-icons/lu";
-import { BsFillPeopleFill, BsPeople } from "react-icons/bs";
-import { LuFileX, LuFileStack } from "react-icons/lu";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { LuFileX, LuFileStack, LuUsers2 } from "react-icons/lu";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
+import { AgChartsReact } from "ag-charts-react";
+import "ag-charts-enterprise";
 
 import "./index.scss";
 
@@ -27,7 +29,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className={`sidebar-menu-item ${pathName.includes('/employee-list') ? 'active' : ''}`}>
-                    <BsPeople className="sidebar-menu-item-icon" />
+                    <LuUsers2 className="sidebar-menu-item-icon" />
                     <Link
                         href={'/employee-list'}
                         className='sidebar-menu-item-text'>
