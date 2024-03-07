@@ -27,7 +27,7 @@
 
         .params-heading {
           margin: 0;
-        }
+        }n
 
         .params-value {
           margin: 0;
@@ -38,19 +38,19 @@
   }
 
   .work-hour {
-    background-image: linear-gradient(90deg, #47466d 0%, #3d84a7 100%);
+    background-image: linear-gradient(90deg, #47466d 0%, #47466d 100%);
   }
 
   .check-in {
-    background-image: linear-gradient(90deg, #3d84a7 0%, #46cdcf 100%);
+    background-image: linear-gradient(90deg, #355c7d 0%, #355c7d 100%);
   }
 
   .late-hour {
-    background-image: linear-gradient(90deg, #46cdcf 0%, #3d84a7 100%);
+    background-image: linear-gradient(90deg, #447b91 0%, #447b91 100%);
   }
 
   .overtime {
-    background-image: linear-gradient(90deg, #3d84a7 0%, #47466d 100%);
+    background-image: linear-gradient(90deg, #5aa8b6 0%, #5aa8b6 100%);
   }
 
   .data-card {
@@ -59,15 +59,20 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
-  .main-chart {
+  .check-in-chart {
     width: 92%;
     height: 25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
   }
 
-  .second-chart {
+  // .dummy {
+  //   width: 30%;
+  //   height: 25rem;
+  // }
+
+  .doughnut-chart {
     width: 50%;
     height: 20rem;
     margin-bottom: 50px;
@@ -101,7 +106,7 @@
     }
   }
 
-  .third-chart {
+  .bar-chart {
     width: 40%;
     height: 20rem;
     margin-bottom: 50px;

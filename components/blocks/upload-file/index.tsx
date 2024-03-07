@@ -55,10 +55,10 @@ const UploadFile = () => {
                             </div>
                             <MdCloudDone className='upload-success' />
                         </div>
-                        <div>
+                        {/* <div>
                             <h2>Excel Data:</h2>
                             <pre>{JSON.stringify(excelData, null, 2)}</pre>
-                        </div>
+                        </div> */}
                     </>
                 ) : (
                     <div className='excel-file-none'>

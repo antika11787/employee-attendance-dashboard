@@ -6,15 +6,13 @@ import { Bar, Doughnut, Line } from "react-chartjs-2";
 import Image from "next/image";
 import Helper from "@/utils/helper";
 import HighLow from "@/data/highLow";
-import 'chartjs-adapter-moment';
-import "./index.scss";
-
-import sourceData from "@/data/sourceData.json";
 import allData from "@/data/allData.json";
 import januaryCheckIns from "@/data/januaryCheckIns";
 import { AgChartsReact } from "ag-charts-react";
 import "ag-charts-enterprise";
 import { AgChartOptions } from "ag-charts-enterprise";
+import "./index.scss";
+
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -26,12 +24,6 @@ defaults.plugins.title.font = {
     weight: 'bold'
 };
 defaults.plugins.title.color = "black";
-
-interface EmployeeCheckIn {
-    label: string;
-    low: string;
-    high: string;
-}
 
 const ReactChart = () => {
     const { extractDates, calculateAverageTime, parseTimeString } = Helper();
@@ -47,51 +39,73 @@ const ReactChart = () => {
         setSelectedMonth(event.target.value);
     };
 
-
     const averageWorkHour = calculateAverageTime(januaryCheckIns, "Worked Hours (H.M)");
     const averageLateHour = calculateAverageTime(januaryCheckIns, "Late Hours (H.M)");
     const averageEarlyLeaveHour = calculateAverageTime(januaryCheckIns, "Early Leave Hours (H.M)");
     const averageOvertime = calculateAverageTime(januaryCheckIns, "Over Time (H.M)");
 
-    const labels = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.label);
-    const lows = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.low);
-    const highs = HighLow.map((checkIn: EmployeeCheckIn) => checkIn.high);
-
-    // Prepare data for the chart
-    const data = {
-        labels: labels,
-        datasets: [
+    const [options, setOptions] = useState<AgChartOptions>({
+        data: HighLow.map((data) => {
+            return {
+                label: data.label,
+                low: data.low,
+                high: data.high,
+                late: data.late,
+                early: data.early,
+                ontime: data.ontime
+            }
+        }),
+        title: {
+            text: "Employee Check in Data",
+        },
+        subtitle: {
+            text: "Early, On time and Late Check in for January, 2024",
+        },
+        series: [
             {
-                label: 'Check In Range',
-                data: HighLow.map((checkIn: EmployeeCheckIn) => ({
-                    x: checkIn.label,
-                    y: [checkIn.low, checkIn.high],
-                })),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
+                type: "range-bar",
+                xKey: "label",
+                yLowKey: "low",
+                yHighKey: "high",
+                fill: "#47466D",
+                stroke: "#47466D",
+                // fillOpacity: 0.5,
+                lineDash: [5, 5],
+                lineDashOffset: 10,
+                highlightStyle: {
+                    item: {
+                        fill: "#47466D",
+                    }
+                },
+                tooltip: {
+                    format: {
+                        title: (data: any) => data.label,
+                        value: (data: any) => {
+                            let tooltipContent = "";
+                            if (data.yValue > 0) {
+                                tooltipContent += `Late: ${data.yValue}\n`;
+                            } else if (data.yValue < 0) {
+                                tooltipContent += `Early: ${Math.abs(data.yValue)}\n`;
+                            }
+                            return tooltipContent.trim();
+                        }
+                    }
+                }
             },
         ],
-    };
-
-    // Chart options
-    const options = {
-        scales: {
-            x: {
-                type: 'category',
-                offset: true,
-                grid: {
-                    display: false,
-                },
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: 'Check In Time',
-                },
-            },
+        background: {
+            fill: "transparent",
         },
-    };
+        annotations: [{
+            type: 'line',
+            y: 0,
+            stroke: 'red',
+            strokeWidth: 2,
+            dash: [4, 4]
+        }]
+    });
+
+
 
     return (
         <div className="home-container">
@@ -131,10 +145,11 @@ const ReactChart = () => {
                     <Image src={"/absent.png"} alt="work" width={50} height={50} />
                 </div>
             </div>
-            <div className="data-card main-chart">
-                {/* <Bar type="bar" data={data} options={options} />; */}
+            <div className="data-card check-in-chart">
+                <AgChartsReact className="ag-chart" options={options} />
             </div>
-            <div className="data-card second-chart">
+            <div className="data-card dummy"></div>
+            <div className="data-card doughnut-chart">
                 <div className="doughnut-heading">
                     <h2 className="doughnut-heading-text">Employee Attendance</h2>
                     <div className="doughnut-heading-dropdown-container">
@@ -156,7 +171,7 @@ const ReactChart = () => {
                         datasets: [
                             {
                                 data: [averageWorkHour, averageLateHour, averageEarlyLeaveHour, averageOvertime],
-                                backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8"],
+                                backgroundColor: ["#47466D", "#3D84A7", "#ABEDD8", "#46CDCF"],
                                 borderColor: "transparent",
                             }
                         ],
@@ -173,7 +188,7 @@ const ReactChart = () => {
                     }}
                 />
             </div>
-            <div className="data-card third-chart">
+            <div className="data-card bar-chart">
                 <Bar
                     data={{
                         labels: allData.map((data) => data.label),

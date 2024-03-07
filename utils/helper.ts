@@ -32,16 +32,29 @@ const Helper = () => {
     return monthName;
   };
 
-  const extractDates = (checkIns: CheckInData[]): number[] => {
-    const datesSet: Set<number> = new Set();
+  // const extractDates = (checkIns: CheckInData[]): number[] => {
+  //   const datesSet: Set<number> = new Set();
+
+  //   checkIns.forEach((data) => {
+  //     const checkInDate: Date = new Date(data["Check In"]);
+  //     datesSet.add(checkInDate.getDate());
+  //   });
+
+  //   return Array.from(datesSet);
+  // };
+
+  const extractDates = (checkIns: CheckInData[]): string[] => {
+    const datesSet: Set<string> = new Set();
 
     checkIns.forEach((data) => {
-      const checkInDate: Date = new Date(data["Check In"]);
-      datesSet.add(checkInDate.getDate());
+        const checkInDate: Date = new Date(data["Check In"]);
+        const day = checkInDate.getDate();
+        const month = checkInDate.toLocaleString('en-US', { month: 'short' });
+        datesSet.add(`${day} ${month}`);
     });
 
     return Array.from(datesSet);
-  };
+};
 
   const extractUniqueNames = (checkIns: any[]): string[] => {
     const namesSet: Set<string> = new Set();

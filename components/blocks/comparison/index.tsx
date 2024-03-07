@@ -14,7 +14,6 @@ import {
     defaults
 } from 'chart.js';
 import { Bar, Doughnut } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
 import { BsFilterRight } from 'react-icons/bs';
 import { useState } from 'react';
 
@@ -64,7 +63,7 @@ const Comparison = () => {
                     </div>
                     <select value={selectedValue} onChange={handleChangeValue} className="single-employee-dropdown">
                         <option value="last 2 days">last 2 days</option>
-                        <option value="last 7 days">last 7 days</option>
+                        <option value="last 5 days">last 5 days</option>
                         <option value="last 15 days">last 15 days</option>
                         <option value="last 2 months">last 2 months</option>
                     </select>
@@ -74,11 +73,11 @@ const Comparison = () => {
                 <div className='single-data-card overtime-vs-late'>
                     <Doughnut
                         data={{
-                            labels: ["Jan 1", "jan 2"],
+                            labels: ["Jan 1", "jan 2", "jan 3", "jan 4", "jan 5"],
                             datasets: [
                                 {
-                                    data: [7, 9],
-                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8"],
+                                    data: [7, 9, 8, 9, 10],
+                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8", "#dbfff5"],
                                     borderColor: "transparent",
                                 }
                             ],
@@ -99,11 +98,11 @@ const Comparison = () => {
                 <div className='single-data-card overtime-vs-late'>
                     <Doughnut
                         data={{
-                            labels: ["Jan 1", "jan 2"],
+                            labels: ["Jan 1", "jan 2", "jan 3", "jan 4", "jan 5"],
                             datasets: [
                                 {
-                                    data: [7, 9],
-                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8"],
+                                    data: [0, 0.5, 0.5, 0.5, 0.5],
+                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8", "#dbfff5"],
                                     borderColor: "transparent",
                                 }
                             ],
@@ -124,11 +123,11 @@ const Comparison = () => {
                 <div className='single-data-card overtime-vs-late'>
                     <Doughnut
                         data={{
-                            labels: ["Jan 1", "jan 2"],
+                            labels: ["Jan 1", "jan 2", "jan 3", "jan 4", "jan 5"],
                             datasets: [
                                 {
-                                    data: [0, 0.5],
-                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8"],
+                                    data: [0.5, 0.5, 0.5, 0.5, 0.5],
+                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8", "#dbfff5"],
                                     borderColor: "transparent",
                                 }
                             ],
@@ -149,11 +148,11 @@ const Comparison = () => {
                 <div className='single-data-card overtime-vs-late'>
                     <Doughnut
                         data={{
-                            labels: ["Jan 1", "jan 2"],
+                            labels: ["Jan 1", "jan 2", "jan 3", "jan 4", "jan 5"],
                             datasets: [
                                 {
-                                    data: [0.33, 0.21],
-                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8"],
+                                    data: [0.33, 0.12, 0.43, 0.12, 0.19],
+                                    backgroundColor: ["#47466D", "#3D84A7", "#46CDCF", "#ABEDD8", "#dbfff5"],
                                     borderColor: "transparent",
                                 }
                             ],
