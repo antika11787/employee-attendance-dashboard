@@ -2,13 +2,16 @@ import { DateTime } from "luxon";
 import * as XLSX from "xlsx";
 
 interface CheckInData {
-  Employee: string;
-  "Employee ID": number;
-  "Check In": string;
-  "Worked Hours (H.M)": number;
-  "Late Hours (H.M)": number;
-  "Early Leave Hours (H.M)": number;
-  "Over Time (H.M)": number;
+  Employee?: string;
+  "Employee ID"?: number;
+  "Check In"?: string;
+  "Worked Hours (H.M)"?: number;
+  "Late Hours (H.M)"?: number;
+  "Early Leave Hours (H.M)"?: number;
+  "Over Time (H.M)"?: number;
+  early?: number;
+  late?: number;
+  ontime?: number;
   [key: string]: any;
 }
 
@@ -47,14 +50,14 @@ const Helper = () => {
     const datesSet: Set<string> = new Set();
 
     checkIns.forEach((data) => {
-        const checkInDate: Date = new Date(data["Check In"]);
-        const day = checkInDate.getDate();
-        const month = checkInDate.toLocaleString('en-US', { month: 'short' });
-        datesSet.add(`${day} ${month}`);
+      const checkInDate: Date = new Date(data["Check In"] ?? "");
+      const day = checkInDate.getDate();
+      const month = checkInDate.toLocaleString("en-US", { month: "short" });
+      datesSet.add(`${day} ${month}`);
     });
 
     return Array.from(datesSet);
-};
+  };
 
   const extractUniqueNames = (checkIns: any[]): string[] => {
     const namesSet: Set<string> = new Set();
@@ -66,10 +69,10 @@ const Helper = () => {
     return Array.from(namesSet);
   };
 
-  function calculateAverageTime(
+  const calculateAverageTime = (
     checkIns: CheckInData[],
     timeKey: string
-  ): number {
+  ): number => {
     let totalTime = 0;
     let totalEmployees = 0;
 
@@ -83,7 +86,28 @@ const Helper = () => {
     // Calculate the average time
     const averageTime = totalTime / totalEmployees;
     return averageTime;
-  }
+  };
+
+  const calculateAverageCheckInTime = (
+    checkIns: CheckInData[],
+    param: string // change type to string
+  ) => {
+    let total = 0;
+    let count = 0;
+
+    checkIns.forEach((checkIn) => {
+      if (checkIn[param] !== undefined) {
+        total += checkIn[param];
+        count++;
+      }
+    });
+
+    if (count === 0) {
+      return 0;
+    }
+
+    return total / count;
+  };
 
   const getInitials = (name: string) => {
     const initials = name
@@ -136,6 +160,7 @@ const Helper = () => {
     getColor,
     parseTimeString,
     readExcelFile,
+    calculateAverageCheckInTime,
   };
 };
 

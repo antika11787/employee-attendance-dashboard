@@ -1,17 +1,19 @@
 'use client';
 
-import React, { useState, ChangeEventHandler } from "react";
+import React, { useState, ChangeEventHandler, useEffect } from "react";
 import { Chart as ChartJS, registerables, defaults } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 import Image from "next/image";
 import Helper from "@/utils/helper";
 import HighLow from "@/data/highLow";
-import allData from "@/data/allData.json";
 import januaryCheckIns from "@/data/januaryCheckIns";
 import { AgChartsReact } from "ag-charts-react";
 import "ag-charts-enterprise";
 import { AgChartOptions } from "ag-charts-enterprise";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import "./index.scss";
+import Clock from "@/components/elements/clock";
 
 
 defaults.maintainAspectRatio = false;
@@ -26,18 +28,11 @@ defaults.plugins.title.font = {
 defaults.plugins.title.color = "black";
 
 const ReactChart = () => {
-    const { extractDates, calculateAverageTime, parseTimeString } = Helper();
-
-    const [selectedYear, setSelectedYear] = useState('2024');
-    const [selectedMonth, setSelectedMonth] = useState('january');
-
-    const handleChangeYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedYear(event.target.value);
-    };
-
-    const handleChangeMonth = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedMonth(event.target.value);
-    };
+    const { calculateAverageTime } = Helper();
+    const [isClient, setIsClient] = useState<boolean>(false);
+    const [value, onChange] = useState<Value>(new Date());
+    type ValuePiece = Date | null;
+    type Value = ValuePiece | [ValuePiece, ValuePiece];
 
     const averageWorkHour = calculateAverageTime(januaryCheckIns, "Worked Hours (H.M)");
     const averageLateHour = calculateAverageTime(januaryCheckIns, "Late Hours (H.M)");
@@ -50,16 +45,13 @@ const ReactChart = () => {
                 label: data.label,
                 low: data.low,
                 high: data.high,
-                late: data.late,
-                early: data.early,
-                ontime: data.ontime
             }
         }),
         title: {
             text: "Employee Check in Data",
         },
         subtitle: {
-            text: "Early, On time and Late Check in for January, 2024",
+            text: "Maximum Early and Late Check in (in minutes) for January, 2024",
         },
         series: [
             {
@@ -69,121 +61,94 @@ const ReactChart = () => {
                 yHighKey: "high",
                 fill: "#47466D",
                 stroke: "#47466D",
-                // fillOpacity: 0.5,
-                lineDash: [5, 5],
-                lineDashOffset: 10,
-                highlightStyle: {
-                    item: {
-                        fill: "#47466D",
-                    }
-                },
-                tooltip: {
-                    format: {
-                        title: (data: any) => data.label,
-                        value: (data: any) => {
-                            let tooltipContent = "";
-                            if (data.yValue > 0) {
-                                tooltipContent += `Late: ${data.yValue}\n`;
-                            } else if (data.yValue < 0) {
-                                tooltipContent += `Early: ${Math.abs(data.yValue)}\n`;
-                            }
-                            return tooltipContent.trim();
-                        }
-                    }
-                }
             },
         ],
         background: {
             fill: "transparent",
         },
-        annotations: [{
-            type: 'line',
-            y: 0,
-            stroke: 'red',
-            strokeWidth: 2,
-            dash: [4, 4]
-        }]
     });
 
-
+    useEffect(() => {
+        setIsClient(true);
+    }, [])
 
     return (
         <div className="home-container">
-            <div className="data-card params work-hour">
-                <div className="params-wrapper">
-                    <Image src={"/team.png"} alt="work" width={50} height={50} />
-                    <div className="params-detail">
-                        <h5 className="params-heading">Total Employee</h5>
-                        <h2 className="params-value">500</h2>
-                    </div>
+            <div className="top-container">
+                <div className="calendar custom-scrollbar">
+                    <Calendar onChange={onChange} value={value} className={"custom-calendar"} />
                 </div>
-            </div>
-            <div className="data-card params check-in">
-                <div className="params-wrapper">
-                    <div className="params-detail">
-                        <h5 className="params-heading">Checked in</h5>
-                        <h2 className="params-value">460</h2>
+                <div className="params">
+                    <div className="params-box check-in">
+                        {isClient && <Clock />}
                     </div>
-                    <Image src={"/check-in.png"} alt="work" width={50} height={50} />
-                </div>
-            </div>
-            <div className="data-card params late-hour">
-                <div className="params-wrapper">
-                    <Image src={"/running.png"} alt="work" width={50} height={50} />
-                    <div className="params-detail">
-                        <h5 className="params-heading">Late Arrival</h5>
-                        <h2 className="params-value">5%</h2>
+                    <div className="params-box check-in">
+                        <div className="total-container">
+                            <Image src="/job-seeker.png" alt="check-in" width={70} height={70} />
+                            <div className="total">
+                                <p>Total Employee</p>
+                                <p>500</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="data-card params overtime">
-                <div className="params-wrapper">
-                    <div className="params-detail">
-                        <h5 className="params-heading">Total Absent</h5>
-                        <h2 className="params-value">40</h2>
-                    </div>
-                    <Image src={"/absent.png"} alt="work" width={50} height={50} />
+                    <div className="params-box check-in"></div>
+                    <div className="params-box check-in"></div>
                 </div>
             </div>
             <div className="data-card check-in-chart">
                 <AgChartsReact className="ag-chart" options={options} />
             </div>
-            <div className="data-card dummy"></div>
-            <div className="data-card doughnut-chart">
-                <div className="doughnut-heading">
-                    <h2 className="doughnut-heading-text">Employee Attendance</h2>
-                    <div className="doughnut-heading-dropdown-container">
-                        <select value={selectedYear} onChange={handleChangeYear} className="doughnut-heading-dropdown">
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                        </select>
-                        <select value={selectedMonth} onChange={handleChangeMonth} className="doughnut-heading-dropdown">
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                        </select>
-                    </div>
-                </div>
+            <div className="data-card check-in-doughnut">
                 <Doughnut
                     data={{
-                        labels: ["worked Hours", "Late Hours", "Early Hours", "Overtime"],
+                        labels: ["Early", "On time", "Late"],
                         datasets: [
                             {
-                                data: [averageWorkHour, averageLateHour, averageEarlyLeaveHour, averageOvertime],
-                                backgroundColor: ["#47466D", "#3D84A7", "#ABEDD8", "#46CDCF"],
+                                data: [HighLow[0].early, HighLow[0].ontime, HighLow[0].late],
+                                backgroundColor: ["#47466D", "#3D84A7", "#ABEDD8"],
                                 borderColor: "transparent",
+                                borderRadius: 5,
+                                spacing: 2,
                             }
                         ],
                     }}
                     options={{
                         plugins: {
                             title: {
-                                display: false,
+                                text: `Employee Attendance for ${HighLow[0].label}`,
+                                display: true,
+                                font: {
+                                    size: 16,
+                                }
                             },
                         },
                         layout: {
-                            padding: 10,
+                            padding: 20
+                        }
+                    }}
+                />
+            </div>
+            <div className="data-card doughnut-chart">
+                <Pie
+                    data={{
+                        labels: ["Late Hours", "Early Hours", "Overtime"],
+                        datasets: [
+                            {
+                                data: [averageLateHour, averageEarlyLeaveHour, averageOvertime],
+                                backgroundColor: ["#3D84A7", "#ABEDD8", "#46CDCF"],
+                                borderColor: "transparent",
+                                borderRadius: 5,
+                            }
+                        ],
+                    }}
+                    options={{
+                        plugins: {
+                            title: {
+                                text: "Employee Attendance",
+                            },
+                        },
+                        layout: {
+                            padding: 20
                         }
                     }}
                 />
@@ -191,29 +156,23 @@ const ReactChart = () => {
             <div className="data-card bar-chart">
                 <Bar
                     data={{
-                        labels: allData.map((data) => data.label),
+                        labels: HighLow.map((data) => data.label),
                         datasets: [
-                            // {
-                            //     label: "Worked hours",
-                            //     data: allData.map((data) => data.worked_hours),
-                            //     backgroundColor: "#47466D",
-                            //     borderColor: "#47466D",
-                            // },
                             {
                                 label: "Late hours",
-                                data: allData.map((data) => data.late_hours),
+                                data: januaryCheckIns.map((data) => data["Late Hours (H.M)"]),
                                 backgroundColor: "#3D84A7",
                                 borderColor: "#3D84A7",
                             },
                             {
                                 label: "Early leave hours",
-                                data: allData.map((data) => data.early_leave_hours),
+                                data: januaryCheckIns.map((data) => data["Early Leave Hours (H.M)"]),
                                 backgroundColor: "#46CDCF",
                                 borderColor: "#46CDCF",
                             },
                             {
                                 label: "Overtime",
-                                data: allData.map((data) => data.overtime),
+                                data: januaryCheckIns.map((data) => data["Over Time (H.M)"]),
                                 backgroundColor: "#ABEDD8",
                                 borderColor: "#ABEDD8",
                             },
@@ -227,6 +186,18 @@ const ReactChart = () => {
                         },
                         layout: {
                             padding: 20
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    display: false
+                                }
+                            }
                         }
                     }}
                 />

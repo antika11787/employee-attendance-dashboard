@@ -5,7 +5,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -14,7 +14,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:05:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -23,7 +23,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:30:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -32,7 +32,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:20:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -41,7 +41,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:10:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -50,7 +50,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:25:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -59,7 +59,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:35:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -68,7 +68,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:45:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -77,7 +77,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:55:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -86,7 +86,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-01 08:40:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -95,7 +95,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:20:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -104,7 +104,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:10:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -113,7 +113,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:35:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -122,7 +122,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:25:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -131,7 +131,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -140,7 +140,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:30:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -149,7 +149,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:40:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -158,7 +158,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:50:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -167,7 +167,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:45:00",
     "Worked Hours (H.M)": 9.85,
     "Late Hours (H.M)": 0.25,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.45,
   },
   {
@@ -176,7 +176,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-02 08:55:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -185,7 +185,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:10:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -194,7 +194,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:20:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -203,7 +203,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:30:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -212,7 +212,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:40:00",
     "Worked Hours (H.M)": 9.85,
     "Late Hours (H.M)": 0.25,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.45,
   },
   {
@@ -221,7 +221,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:50:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -230,7 +230,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -239,7 +239,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:25:00",
     "Worked Hours (H.M)": 9.85,
     "Late Hours (H.M)": 0.25,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.45,
   },
   {
@@ -248,7 +248,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:35:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -257,7 +257,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:45:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -266,7 +266,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-03 08:55:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.2,
   },
 
@@ -276,7 +276,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.05,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -285,7 +285,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.58,
     "Late Hours (H.M)": 0.05,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -294,7 +294,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.75,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -303,7 +303,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -312,7 +312,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.7,
     "Late Hours (H.M)": 0.05,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -321,7 +321,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.75,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -330,7 +330,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.8,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -339,7 +339,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.58,
     "Late Hours (H.M)": 0.05,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -348,7 +348,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -357,7 +357,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-04 08:15:00",
     "Worked Hours (H.M)": 8.8,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.4,
   },
 
@@ -367,7 +367,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.07,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -376,7 +376,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -385,7 +385,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -394,7 +394,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -403,7 +403,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -412,7 +412,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -421,7 +421,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -430,7 +430,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -439,7 +439,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -448,7 +448,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-05 08:15:00",
     "Worked Hours (H.M)": 7.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -457,7 +457,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -466,7 +466,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -475,7 +475,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -484,7 +484,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -493,7 +493,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -502,7 +502,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -511,7 +511,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -520,7 +520,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -529,7 +529,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -538,7 +538,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-08 08:15:00",
     "Worked Hours (H.M)": 4.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -547,7 +547,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -556,7 +556,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -565,7 +565,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -574,7 +574,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -583,7 +583,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -592,7 +592,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.1,
   },
   {
@@ -601,7 +601,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -610,7 +610,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -619,7 +619,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -628,7 +628,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-09 08:15:00",
     "Worked Hours (H.M)": 3.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -637,7 +637,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -646,7 +646,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -655,7 +655,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -664,7 +664,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -673,7 +673,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -682,7 +682,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -691,7 +691,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.07,
   },
   {
@@ -700,7 +700,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -709,7 +709,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -718,7 +718,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-10 08:15:00",
     "Worked Hours (H.M)": 2.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.07,
   },
   {
@@ -727,7 +727,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -736,7 +736,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -745,7 +745,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.02,
   },
   {
@@ -754,7 +754,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -763,7 +763,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -772,7 +772,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.02,
   },
   {
@@ -781,7 +781,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -790,7 +790,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -799,7 +799,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -808,7 +808,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-11 08:15:00",
     "Worked Hours (H.M)": 1.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -817,7 +817,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -826,7 +826,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -835,7 +835,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.02,
   },
   {
@@ -844,7 +844,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -853,7 +853,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.7,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -862,7 +862,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.75,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.02,
   },
   {
@@ -871,7 +871,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -880,7 +880,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.58,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.01,
   },
   {
@@ -889,7 +889,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0,
   },
   {
@@ -898,7 +898,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-12 08:15:00",
     "Worked Hours (H.M)": 0.8,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.03,
   },
   {
@@ -907,7 +907,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -916,7 +916,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -925,7 +925,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -934,7 +934,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -943,7 +943,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -952,7 +952,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -961,7 +961,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -970,7 +970,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -979,7 +979,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -988,7 +988,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-15 08:15:00",
     "Worked Hours (H.M)": 1.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -997,7 +997,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1006,7 +1006,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1015,7 +1015,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1024,7 +1024,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1033,7 +1033,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1042,7 +1042,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1051,7 +1051,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1060,7 +1060,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1069,7 +1069,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1078,7 +1078,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-16 08:15:00",
     "Worked Hours (H.M)": 2.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1087,7 +1087,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1096,7 +1096,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1105,7 +1105,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1114,7 +1114,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1123,7 +1123,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1132,7 +1132,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1141,7 +1141,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1150,7 +1150,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1159,7 +1159,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1168,7 +1168,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-17 08:15:00",
     "Worked Hours (H.M)": 3.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1177,7 +1177,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1186,7 +1186,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1195,7 +1195,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1204,7 +1204,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1213,7 +1213,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1222,7 +1222,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1231,7 +1231,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1240,7 +1240,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1249,7 +1249,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1258,7 +1258,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-18 08:15:00",
     "Worked Hours (H.M)": 4.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1267,7 +1267,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1276,7 +1276,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1285,7 +1285,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1294,7 +1294,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1303,7 +1303,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1312,7 +1312,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1321,7 +1321,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1330,7 +1330,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1339,7 +1339,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1348,7 +1348,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-19 08:15:00",
     "Worked Hours (H.M)": 5.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1357,7 +1357,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1366,7 +1366,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1375,7 +1375,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1384,7 +1384,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1393,7 +1393,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1402,7 +1402,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1411,7 +1411,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1420,7 +1420,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1429,7 +1429,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1438,7 +1438,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-22 08:15:00",
     "Worked Hours (H.M)": 8.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1447,7 +1447,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1456,7 +1456,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1465,7 +1465,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1474,7 +1474,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1483,7 +1483,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1492,7 +1492,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1501,7 +1501,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1510,7 +1510,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1519,7 +1519,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1528,7 +1528,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-23 08:15:00",
     "Worked Hours (H.M)": 9.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1537,7 +1537,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1546,7 +1546,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1555,7 +1555,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1564,7 +1564,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1573,7 +1573,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1582,7 +1582,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1591,7 +1591,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1600,7 +1600,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1609,7 +1609,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1618,7 +1618,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-24 08:15:00",
     "Worked Hours (H.M)": 10.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1627,7 +1627,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1636,7 +1636,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1645,7 +1645,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1654,7 +1654,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1663,7 +1663,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1672,7 +1672,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1681,7 +1681,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1690,7 +1690,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1699,7 +1699,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1708,7 +1708,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-25 08:15:00",
     "Worked Hours (H.M)": 11.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1717,7 +1717,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.5,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1726,7 +1726,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1735,7 +1735,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1744,7 +1744,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1753,7 +1753,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.3,
     "Late Hours (H.M)": 0.03,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.15,
   },
   {
@@ -1762,7 +1762,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.25,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.25,
   },
   {
@@ -1771,7 +1771,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1780,7 +1780,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.42,
     "Late Hours (H.M)": 0.02,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.12,
   },
   {
@@ -1789,7 +1789,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.5,
     "Late Hours (H.M)": 0.07,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.05,
   },
   {
@@ -1798,7 +1798,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-26 08:15:00",
     "Worked Hours (H.M)": 12.2,
     "Late Hours (H.M)": 0.12,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1807,7 +1807,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1816,7 +1816,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -1825,7 +1825,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -1834,7 +1834,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1843,7 +1843,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1852,7 +1852,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -1861,7 +1861,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -1870,7 +1870,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -1879,7 +1879,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1888,7 +1888,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-29 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -1897,7 +1897,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1906,7 +1906,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -1915,7 +1915,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -1924,7 +1924,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1933,7 +1933,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -1942,7 +1942,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -1951,7 +1951,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -1960,7 +1960,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -1969,7 +1969,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1978,7 +1978,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-30 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -1987,7 +1987,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -1996,7 +1996,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -2005,7 +2005,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -2014,7 +2014,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -2023,7 +2023,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.7,
     "Late Hours (H.M)": 0.1,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.3,
   },
   {
@@ -2032,7 +2032,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.75,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.35,
   },
   {
@@ -2041,7 +2041,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
   {
@@ -2050,7 +2050,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.58,
     "Late Hours (H.M)": 0.08,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.28,
   },
   {
@@ -2059,7 +2059,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.5,
     "Late Hours (H.M)": 0.15,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.2,
   },
   {
@@ -2068,7 +2068,7 @@ const januaryCheckIns = [
     "Check In": "2024-01-31 08:15:00",
     "Worked Hours (H.M)": 9.8,
     "Late Hours (H.M)": 0.2,
-    "Early Leave Hours (H.M)": 0,
+    "Early Leave Hours (H.M)": 0.03,
     "Over Time (H.M)": 0.4,
   },
 ];
