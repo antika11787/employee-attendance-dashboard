@@ -1,0 +1,79 @@
+.employee-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  .employee-list-heading {
+    margin: 0;
+    // padding: 20px 0 0 20px;
+  }
+
+  .employee-list-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+
+    .table-header {
+      background-color: #ececec;
+      border-radius: 5px;
+      font-weight: bold;
+      height: 50px;
+
+      .table-row {
+        .column-name {
+          text-align: left;
+          width: 20%;
+        }
+      }
+    }
+
+    .table-body {
+      .table-row {
+        border-bottom: 1px solid #ddd;
+
+        .column-name,
+        .column-id,
+        .column-worked-hours,
+        .column-late-hours,
+        .column-early-leave-hours,
+        .column-overtime,
+        .column-action {
+          padding: 18px 10px;
+          text-align: center;
+        }
+
+        .initial {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          padding: 15px 0;
+
+          .employee-name {
+            margin: 0;
+            text-align: start;
+          }
+        }
+
+        .initial-circle {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+        }
+
+        .eye-icon {
+          font-size: 20px;
+          color: #47466d;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

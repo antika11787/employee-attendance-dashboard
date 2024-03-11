@@ -1,0 +1,49 @@
+@use "@/styles/_mixins.scss" as *;
+
+.employee-list-page {
+  height: auto;
+  width: 100%;
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+
+  .employee-list-heading {
+    margin: 0;
+    width: 100%;
+    margin: 30px 0 20px 40px;
+    text-align: start;
+  }
+
+  .searchbar {
+    width: 92%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: 30px;
+  }
+
+  .employee-list-wrapper {
+    width: 92%;
+    height: auto;
+    margin: 0 20px;
+    // background-color: #efefef;
+    border-radius: 0.5em;
+    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 5px 0;
+  }
+}
+
+.single-employee-page {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  background-color: #ffffff;
+}
