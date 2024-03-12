@@ -4,6 +4,7 @@ import Image from 'next/image';
 import './index.scss';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import * as xlsx from 'xlsx';
 
 interface DropzoneInputProps {
     labelHeading: string

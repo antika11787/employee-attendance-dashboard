@@ -15,6 +15,7 @@ import 'react-calendar/dist/Calendar.css';
 import "./index.scss";
 import Clock from "@/components/elements/clock";
 import { TbDotsVertical } from "react-icons/tb";
+import { totalCheckInApi } from "@/apiEndpoints/fileApi";
 
 
 defaults.maintainAspectRatio = false;
@@ -32,8 +33,10 @@ const ReactChart = () => {
     const { calculateAverageTime } = Helper();
     const [isClient, setIsClient] = useState<boolean>(false);
     const [value, onChange] = useState<Value>(new Date());
+    const [date, setDate] = useState(new Date());
     type ValuePiece = Date | null;
     type Value = ValuePiece | [ValuePiece, ValuePiece];
+    const [totalCheckIn, setTotalCheckIn] = useState<number | null>(null);
 
     const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('january');
@@ -85,6 +88,16 @@ const ReactChart = () => {
         setIsClient(true);
     }, [])
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await totalCheckInApi(value);
+            setTotalCheckIn(data);
+        };
+        fetchData();
+    }, [value]);
+
+    console.log("val", value)
+
     return (
         <div className="home-container">
             <div className="top-container">
@@ -109,7 +122,7 @@ const ReactChart = () => {
                         <div className="total-container">
                             <Image src="/mobile.png" alt="check-in" width={70} height={70} />
                             <div className="total">
-                                <p className="total-number">460</p>
+                                <p className="total-number">{totalCheckIn}</p>
                                 <p className="total-employee">Checked in</p>
                             </div>
                         </div>

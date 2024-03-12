@@ -1,8 +1,5 @@
-import { Document, Types } from "mongoose";
-import { Request } from "express";
-
-interface CustomRequest extends Request {
-  file_extension?: string;
+interface FileUpload {
+  file?: File | null;
 }
 
 interface FileResponse {
@@ -15,10 +12,7 @@ interface FileResponse {
   early_leave_hours: Number;
   over_time: Number;
 }
-
-interface IFile extends Document {
-  file: FileResponse[];
-}
+[];
 
 interface FileResponseRaw {
   Employee: String;
@@ -31,4 +25,4 @@ interface FileResponseRaw {
   "Over Time (H.M)": Number;
 }
 
-export { CustomRequest, IFile, FileResponse, FileResponseRaw };
+export type { FileUpload, FileResponse, FileResponseRaw };
