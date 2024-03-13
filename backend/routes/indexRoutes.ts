@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const { handleSyntaxError } = require("../utils/errorHandler");
 const cors = require("cors");
 const fileRoutes = require("../routes/fileRoutes");
+const employeeRoutes = require("../routes/employeeRoutes");
 
 dotenv.config();
 
@@ -16,5 +17,6 @@ app.use("/uploads", express.static("uploads"));
 app.use(handleSyntaxError);
 
 app.use("/file", fileRoutes);
+app.use("/employee", employeeRoutes);
 
 export = app;

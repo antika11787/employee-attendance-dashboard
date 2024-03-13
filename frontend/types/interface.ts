@@ -3,14 +3,14 @@ interface FileUpload {
 }
 
 interface FileResponse {
-  employee: String;
-  employee_id: String;
-  check_in: Date;
-  check_out: Date;
-  worked_hours: Number;
-  late_hours: Number;
-  early_leave_hours: Number;
-  over_time: Number;
+  employee: string;
+  employee_id: string;
+  check_in: string;
+  check_out: string;
+  worked_hours: number;
+  late_hours: number;
+  early_leave_hours: number;
+  over_time: number;
 }
 [];
 
@@ -25,4 +25,27 @@ interface FileResponseRaw {
   "Over Time (H.M)": Number;
 }
 
-export type { FileUpload, FileResponse, FileResponseRaw };
+interface FileState {
+  file: {
+    _id: string;
+  };
+}
+
+interface totalEmployeeResponse {
+  total?: string;
+}
+
+interface InputFieldProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  name: string;
+}
+
+export type {
+  FileUpload,
+  FileResponse,
+  FileResponseRaw,
+  FileState,
+  totalEmployeeResponse,
+  InputFieldProps,
+};

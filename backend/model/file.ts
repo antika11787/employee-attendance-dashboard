@@ -6,8 +6,8 @@ const fileUploadSchema = new Schema<IFile>({
     {
       employee: String,
       employee_id: String,
-      check_in: Date,
-      check_out: Date,
+      check_in: String,
+      check_out: String,
       worked_hours: Number,
       late_hours: Number,
       early_leave_hours: Number,

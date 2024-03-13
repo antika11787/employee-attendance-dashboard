@@ -4,12 +4,12 @@ import { FileResponse, FileUpload } from "@/types/interface";
 import dotenv from "dotenv";
 dotenv.config();
 
-export const UploadFileApi = async (file: any) => {
+export const UpdateTotalEmployeeApi = async (data: any) => {
   return axiosInstance
-    .post("/api/v1/file/upload-file", file)
+    .patch("/api/v1/employee/update-total-employees", data)
     .then((response) => {
       console.log("response", response.data.data);
-      toast.success("File uploaded successfully");
+      toast.success("Updated successfully");
       return response.data.data;
     })
     .catch((error) => {
@@ -17,12 +17,9 @@ export const UploadFileApi = async (file: any) => {
     });
 };
 
-export const totalCheckInApi = async (id: string, date: any) => {
+export const GetTotalEmployeeApi = async () => {
   return axiosInstance
-    .post("/api/v1/file/total-checkin", {
-      id: id,
-      date: date,
-    })
+    .get("/api/v1/employee/get-total-employee")
     .then((response) => {
       console.log("response", response.data.data);
       return response.data.data;
@@ -32,12 +29,9 @@ export const totalCheckInApi = async (id: string, date: any) => {
     });
 };
 
-export const totalLateApi = async (id: string, date: any) => {
+export const GetAllEmployeesApi = async (id: string) => {
   return axiosInstance
-    .post("/api/v1/file/total-late", {
-      id: id,
-      date: date,
-    })
+    .get(`/api/v1/employee/get-all-employees/${id}`)
     .then((response) => {
       console.log("response", response.data.data);
       return response.data.data;

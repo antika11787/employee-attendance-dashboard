@@ -1,21 +1,27 @@
+'use client';
+
 import './index.scss';
 import Helper from '@/utils/helper';
 import Link from 'next/link';
 import { FaEye } from "react-icons/fa";
+import { GetAllEmployeesApi } from '@/apiEndpoints/employeeApi';
+import { FileResponse, FileState } from '@/types/interface';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-interface Employee {
-    Employee: string;
-    "Employee ID": number;
-    "Check In": string;
-    "Worked Hours (H.M)": number;
-    "Late Hours (H.M)": number;
-    "Early Leave Hours (H.M)": number;
-    "Over Time (H.M)": number;
-}
-
-const EmployeeList = ({ employees }: { employees: Employee[] }) => {
+const EmployeeList = () => {
     const { getInitials, getColor } = Helper();
+    const [data, setData] = useState<FileResponse[]>([]);
+    const fileId = useSelector((state: FileState) => state.file._id);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await GetAllEmployeesApi(fileId);
+            setData(response.file);
+        };
+        fetchData();
+    }, [])
+    console.log(data)
     return (
         <div className='employee-list-container'>
             <table className='employee-list-table'>
@@ -31,21 +37,21 @@ const EmployeeList = ({ employees }: { employees: Employee[] }) => {
                     </tr>
                 </thead>
                 <tbody className='table-body'>
-                    {employees.map(employee => (
-                        <tr key={employee["Employee ID"]} className='table-row'>
-                            <td className='column-id'>{employee["Employee ID"]}</td>
+                    {data.map(emp => (
+                        <tr key={emp.employee_id} className='table-row'>
+                            <td className='column-id'>{emp.employee_id}</td>
                             <td className='initial column-name'>
-                                <div className="initial-circle" style={{ backgroundColor: getColor(getInitials(employee.Employee)) }}>
-                                    {getInitials(employee.Employee)}
+                                <div className="initial-circle" style={{ backgroundColor: getColor(getInitials(emp.employee)) }}>
+                                    {getInitials(emp.employee)}
                                 </div>
-                                <p className='employee-name'>{employee.Employee}</p>
+                                <p className='employee-name'>{emp.employee}</p>
                             </td>
-                            <td className='column-worked-hours'>{employee["Worked Hours (H.M)"]}</td>
-                            <td className='column-late-hours'>{employee["Late Hours (H.M)"]}</td>
-                            <td className='column-early-leave-hours'>{employee["Early Leave Hours (H.M)"]}</td>
-                            <td className='column-overtime'>{employee["Over Time (H.M)"]}</td>
+                            <td className='column-worked-hours'>{emp.worked_hours}</td>
+                            <td className='column-late-hours'>{emp.late_hours}</td>
+                            <td className='column-early-leave-hours'>{emp.early_leave_hours}</td>
+                            <td className='column-overtime'>{emp.over_time}</td>
                             <td className='column-action'>
-                                <Link href={'/employee-list/' + employee["Employee ID"]}>
+                                <Link href={'/employee-list/' + emp.employee_id}>
                                     <FaEye className='eye-icon' />
                                 </Link>
                             </td>

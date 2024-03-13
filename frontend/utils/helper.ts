@@ -35,16 +35,31 @@ const Helper = () => {
     return monthName;
   };
 
-  // const extractDates = (checkIns: CheckInData[]): number[] => {
-  //   const datesSet: Set<number> = new Set();
+  const formatDateToDay = (value: Date): void => {
+    console.log("format", formatDateToDay(value));
 
-  //   checkIns.forEach((data) => {
-  //     const checkInDate: Date = new Date(data["Check In"]);
-  //     datesSet.add(checkInDate.getDate());
-  //   });
-
-  //   return Array.from(datesSet);
-  // };
+    if (value instanceof Date) {
+      const months = [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+      ];
+      const day = value.getDate();
+      const month = months[value.getMonth()];
+      const year = value.getFullYear();
+      const formattedDate = `${year}-${month}-${day < 10 ? "0" + day : day}`;
+      console.log("value", formattedDate);
+    }
+  };
 
   const extractDates = (checkIns: CheckInData[]): string[] => {
     const datesSet: Set<string> = new Set();
@@ -149,7 +164,6 @@ const Helper = () => {
     //   reader.onerror = (error) => reject(error);
     //   reader.readAsBinaryString(file);
     // });
-    
   }
 
   return {
@@ -162,6 +176,7 @@ const Helper = () => {
     parseTimeString,
     readExcelFile,
     calculateAverageCheckInTime,
+    formatDateToDay,
   };
 };
 

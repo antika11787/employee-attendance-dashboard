@@ -21,17 +21,11 @@ class FileController {
 
       const workbook_response_columns = workbook_response.map(
         (entry: FileResponseRaw) => {
-          const checkIn = new Date(entry["Check In"]);
-          const checkOut = new Date(entry["Check Out"]);
-
-          checkIn.setHours(checkIn.getHours() + 6);
-          checkOut.setHours(checkOut.getHours() + 6);
-
           const mappedEntry: FileResponse = {
             employee: entry.Employee,
             employee_id: entry["Employee ID"],
-            check_in: checkIn,
-            check_out: checkOut,
+            check_in: entry["Check In"],
+            check_out: entry["Check Out"],
             worked_hours: entry["Worked Hours (H.M)"],
             late_hours: entry["Late Hours (H.M)"],
             early_leave_hours: entry["Early Leave Hours (H.M)"],
@@ -54,6 +48,15 @@ class FileController {
         file: workbook_response_trimmed,
       });
 
+      newFile.file.forEach((entry: FileResponse) => {
+        if (entry.check_in) {
+          entry.check_in = entry.check_in.split(" ")[0];
+        }
+        if (entry.check_out) {
+          entry.check_out = entry.check_out.split(" ")[0];
+        }
+      });
+
       const saveFile = await newFile.save();
 
       return res
@@ -65,36 +68,46 @@ class FileController {
     }
   }
 
-  async getDates(req: Request, res: Response): Promise<Response> {
+  async totalCheckIns(req: Request, res: Response): Promise<Response> {
     try {
-      const dates = await fileModel.findOne();
-      const result = dates?.file.map((entry: FileResponse) => {
-        return new Date(entry.check_in).toISOString().split("T")[0];
-      });
-      // .filter(
-      //   (date: string, index: number, self: string[]) =>
-      //     self.indexOf(date) === index
-      // );
+      const { id, date } = req.body;
+      let total = 0;
+      if (!id || !date) {
+        return res.status(400).send(failure("No date provided"));
+      }
 
-      return res
-        .status(200)
-        .send(success("Dates fetched successfully", result));
+      const files = await fileModel.findById(id);
+
+      const checkIns = files.file.filter((data: FileResponse) => {
+        return data.check_in === date;
+      });
+
+      total = checkIns.length;
+
+      return res.status(200).send(success("Dates fetched successfully", total));
     } catch (error) {
       console.log(error);
       return res.status(500).send(failure("Something went wrong", error));
     }
   }
 
-  async totalCheckIns(req: Request, res: Response): Promise<Response> {
+  async totalLate(req: Request, res: Response): Promise<Response> {
     try {
-      const { date } = req.body;
-      if (!date) {
+      const { id, date } = req.body;
+      let total = 0;
+      if (!id || !date) {
         return res.status(400).send(failure("No date provided"));
       }
 
-      const count = await fileModel.countDocuments({ check_in: date });
+      const files = await fileModel.findById(id);
 
-      return res.status(200).send(success("Dates fetched successfully", count));
+      const late = files.file.filter((data: FileResponse) => {
+        return (data.late_hours as number) > 0 && data.check_in === date;
+      });
+
+      total = late.length;
+
+      return res.status(200).send(success("Dates fetched successfully", total));
     } catch (error) {
       console.log(error);
       return res.status(500).send(failure("Something went wrong", error));

@@ -1,17 +1,27 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DropzoneInput from '@/components/elements/dropzoneInput';
 import { MdCloudDone } from "react-icons/md";
 import { useRouter } from 'next/navigation';
 import { UploadFileApi } from "@/apiEndpoints/fileApi";
+import { useDispatch } from "react-redux";
+import { saveFileID } from "@/redux/slices/FileSlice";
 import './index.scss';
-import { FileResponse, FileResponseRaw, FileUpload } from '@/types/interface';
+import { FileState } from '@/types/interface';
 
 const UploadFile = () => {
     const router = useRouter();
     const [file, setFile] = useState<any>(null);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const storedId = localStorage.getItem("_id");
+        if (storedId) {
+            dispatch(saveFileID({ _id: storedId }));
+        }
+    }, [file]);
 
     return (
         <div className="upload-wrapper">
@@ -31,8 +41,11 @@ const UploadFile = () => {
                                 const formData = new FormData();
                                 formData.append("file", file);
 
-                                await UploadFileApi(formData);
-                                // router.push('/')
+                                const response = await UploadFileApi(formData)
+                                console.log("resp", response._id);
+                                localStorage.setItem("_id", response._id);
+                                router.push('/')
+                                // setFile(null);
                             }}>
                                 <Image
                                     src={'/excel.png'}

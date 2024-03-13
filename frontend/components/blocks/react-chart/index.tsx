@@ -14,9 +14,12 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import "./index.scss";
 import Clock from "@/components/elements/clock";
-import { TbDotsVertical } from "react-icons/tb";
-import { totalCheckInApi } from "@/apiEndpoints/fileApi";
-
+import { BiSolidEditAlt } from "react-icons/bi";
+import { totalCheckInApi, totalLateApi } from "@/apiEndpoints/fileApi";
+import { GetTotalEmployeeApi, UpdateTotalEmployeeApi } from "@/apiEndpoints/employeeApi";
+import { useSelector } from "react-redux";
+import { FileState, totalEmployeeResponse } from "@/types/interface";
+import EditModal from "../editModal";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -30,13 +33,18 @@ defaults.plugins.title.font = {
 defaults.plugins.title.color = "black";
 
 const ReactChart = () => {
+    const fileId = useSelector((state: FileState) => state.file._id);
     const { calculateAverageTime } = Helper();
     const [isClient, setIsClient] = useState<boolean>(false);
     const [value, onChange] = useState<Value>(new Date());
-    const [date, setDate] = useState(new Date());
     type ValuePiece = Date | null;
     type Value = ValuePiece | [ValuePiece, ValuePiece];
     const [totalCheckIn, setTotalCheckIn] = useState<number | null>(null);
+    const [totalLate, setTotalLate] = useState<number | null>(null);
+    const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
+    const [editModalTotal, setEditModalTotal] =
+        useState<totalEmployeeResponse | null>(null);
+    const [total, setTotal] = useState<totalEmployeeResponse | undefined>(undefined);
 
     const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('january');
@@ -84,19 +92,38 @@ const ReactChart = () => {
         },
     });
 
+    const openEditModal = () => {
+        setIsEditModalOpen(true);
+    };
+
+    const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    const day = value instanceof Date ? value.getDate() : undefined;
+    const month = value instanceof Date ? months[value.getMonth()] : undefined;
+    const year = value instanceof Date ? value.getFullYear() : undefined;
+    const formattedDate = `${year}-${month}-${Number(day ?? '01') < 10 ? '0' + (day ?? '01') : (day ?? '01')}`;
+    console.log("value", formattedDate);
+
     useEffect(() => {
         setIsClient(true);
     }, [])
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await totalCheckInApi(value);
-            setTotalCheckIn(data);
+            try {
+                const [checkInData, lateData, totaldata] = await Promise.all([
+                    totalCheckInApi(fileId, formattedDate),
+                    totalLateApi(fileId, formattedDate),
+                    GetTotalEmployeeApi()
+                ]);
+                setTotalCheckIn(checkInData);
+                setTotalLate(lateData);
+                setTotal(totaldata);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         };
         fetchData();
     }, [value]);
-
-    console.log("val", value)
 
     return (
         <div className="home-container">
@@ -110,17 +137,26 @@ const ReactChart = () => {
                     </div>
                     <div className="params-box total-wrapper">
                         <div className="total-container">
-                            <Image src="/employee.png" alt="check-in" width={70} height={70} />
+                            <Image src="/employee.png" alt="employees" width={70} height={70} />
                             <div className="total">
-                                <p className="total-number">500</p>
-                                <p className="total-employee">Total Employee</p>
+                                <p className="total-number">100</p>
+                                <p className="total-employee">total Employee</p>
                             </div>
-                            <TbDotsVertical className="total-employee-update-icon" />
+                            <BiSolidEditAlt className="total-employee-update-icon"
+                                onClick={() => {
+                                    openEditModal();
+                                }} />
+                            <EditModal
+                                isEditModalOpen={isEditModalOpen}
+                                setIsEditModalOpen={setIsEditModalOpen}
+                                editModalTotal={editModalTotal}
+                                setTotal={setTotal}
+                            />
                         </div>
                     </div>
                     <div className="params-box total-wrapper">
                         <div className="total-container">
-                            <Image src="/mobile.png" alt="check-in" width={70} height={70} />
+                            <Image src="/mobile.png" alt="checked-in" width={70} height={70} />
                             <div className="total">
                                 <p className="total-number">{totalCheckIn}</p>
                                 <p className="total-employee">Checked in</p>
@@ -129,9 +165,9 @@ const ReactChart = () => {
                     </div>
                     <div className="params-box total-wrapper">
                         <div className="total-container">
-                            <Image src="/running.png" alt="check-in" width={70} height={70} />
+                            <Image src="/running.png" alt="running" width={70} height={70} />
                             <div className="total">
-                                <p className="total-number">200</p>
+                                <p className="total-number">{totalLate}</p>
                                 <p className="total-employee">Total Late</p>
                             </div>
                         </div>
@@ -144,11 +180,11 @@ const ReactChart = () => {
             <div className="data-card check-in-doughnut">
                 <Doughnut
                     data={{
-                        labels: ["Early", "On time", "Late"],
+                        labels: ["Absent", "Present"],
                         datasets: [
                             {
-                                data: [HighLow[0].early, HighLow[0].ontime, HighLow[0].late],
-                                backgroundColor: ["#47466D", "#3D84A7", "#ABEDD8"],
+                                data: [100 - (totalCheckIn ?? 0), totalCheckIn],
+                                backgroundColor: ["#3D84A7", "#ABEDD8"],
                                 borderColor: "transparent",
                                 borderRadius: 5,
                                 spacing: 2,
@@ -158,7 +194,7 @@ const ReactChart = () => {
                     options={{
                         plugins: {
                             title: {
-                                text: `Employee Attendance for ${HighLow[0].label}`,
+                                text: `Employee Attendance for ${formattedDate}`,
                                 display: true,
                                 font: {
                                     size: 16,

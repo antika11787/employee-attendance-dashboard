@@ -1,0 +1,20 @@
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  .form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #242424;
+  }
+
+  .form-input {
+    width: 500px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #47466d;
+    font-size: 16px;
+    outline: none;
+  }
+}
