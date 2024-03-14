@@ -124,7 +124,11 @@ const Helper = () => {
     return total / count;
   };
 
-  const getInitials = (name: string) => {
+  const getInitials = (name: string | undefined) => {
+    if (name === undefined) {
+      return ""; // or handle the case where name is undefined
+    }
+
     const initials = name
       .split(" ")
       .map((word) => word.charAt(0))
@@ -133,7 +137,7 @@ const Helper = () => {
     return initials;
   };
 
-  const getColor = (initial: string) => {
+  const getColor = (initial: string | undefined = "") => {
     const colors = [
       "#47466D",
       "#F8B195",
@@ -142,7 +146,7 @@ const Helper = () => {
       "#6C5B7B",
       "#355C7D",
     ];
-    const index = initial.charCodeAt(0) % colors.length;
+    const index = initial.charCodeAt(1) % colors.length;
     return colors[index];
   };
 

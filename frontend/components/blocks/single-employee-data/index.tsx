@@ -2,9 +2,13 @@
 
 import './index.scss';
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Helper from '@/utils/helper';
 import { BsFilterRight } from "react-icons/bs";
+import { FileResponse, FileState } from '@/types/interface';
+import { useSelector } from 'react-redux';
+import { GetAllEmployeesApi } from '@/apiEndpoints/employeeApi';
+
 
 const SingleEmployeeData = () => {
     const { getInitials, getColor } = Helper();
@@ -12,6 +16,8 @@ const SingleEmployeeData = () => {
 
     const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('january');
+    const [data, setData] = useState<FileResponse>();
+    const fileId = useSelector((state: FileState) => state.file._id);
 
     const handleChangeYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedYear(event.target.value);
@@ -21,13 +27,24 @@ const SingleEmployeeData = () => {
         setSelectedMonth(event.target.value);
     };
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await GetAllEmployeesApi(fileId);
+            const employee = response.find((emp: FileResponse) => emp.employee_id === id);
+            setData(employee);
+        };
+        fetchData();
+    }, [])
+
+    console.log("ksbda", data)
+
     return (
         <div className="single-employee-data">
             <div className='image-name'>
-                <div className="initial-circle" style={{ backgroundColor: getColor(getInitials("Alice Doe")) }}>
-                    {getInitials("Alice Doe")}
+                <div className="initial-circle" style={{ backgroundColor: getColor(getInitials(data?.employee)) }}>
+                    {getInitials(data?.employee)}
                 </div>
-                <h1 className='employee-name'>Alice Doe</h1>
+                <h1 className='employee-name'>{data?.employee}</h1>
             </div>
             <div className='filter-wrapper'>
                 <div className='filters'>

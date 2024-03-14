@@ -6,6 +6,32 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
+  position: relative;
+
+  .search-result-wrapper {
+    position: absolute;
+    top: 100%;
+    background-color: #f3f3f3;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow-y: auto;
+    width: 25vw;
+    max-height: 50vh;
+    padding: 10px 0;
+
+    .search-employee {
+      padding: 7px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e7e7e7;
+      }
+    }
+  }
 
   .searchbar-container {
     display: flex;

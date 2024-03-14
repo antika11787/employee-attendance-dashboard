@@ -8,8 +8,10 @@ import { GetAllEmployeesApi } from '@/apiEndpoints/employeeApi';
 import { FileResponse, FileState } from '@/types/interface';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const EmployeeList = () => {
+    const router = useRouter();
     const { getInitials, getColor } = Helper();
     const [data, setData] = useState<FileResponse[]>([]);
     const fileId = useSelector((state: FileState) => state.file._id);
@@ -17,7 +19,7 @@ const EmployeeList = () => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await GetAllEmployeesApi(fileId);
-            setData(response.file);
+            setData(response);
         };
         fetchData();
     }, [])
@@ -37,26 +39,30 @@ const EmployeeList = () => {
                     </tr>
                 </thead>
                 <tbody className='table-body'>
-                    {data.map(emp => (
-                        <tr key={emp.employee_id} className='table-row'>
-                            <td className='column-id'>{emp.employee_id}</td>
-                            <td className='initial column-name'>
-                                <div className="initial-circle" style={{ backgroundColor: getColor(getInitials(emp.employee)) }}>
-                                    {getInitials(emp.employee)}
-                                </div>
-                                <p className='employee-name'>{emp.employee}</p>
-                            </td>
-                            <td className='column-worked-hours'>{emp.worked_hours}</td>
-                            <td className='column-late-hours'>{emp.late_hours}</td>
-                            <td className='column-early-leave-hours'>{emp.early_leave_hours}</td>
-                            <td className='column-overtime'>{emp.over_time}</td>
-                            <td className='column-action'>
-                                <Link href={'/employee-list/' + emp.employee_id}>
-                                    <FaEye className='eye-icon' />
-                                </Link>
-                            </td>
-                        </tr>
-                    ))}
+                    {data ? (
+                        data.map(emp => (
+                            <tr key={emp.employee_id} className='table-row'>
+                                <td className='column-id'>{emp.employee_id}</td>
+                                <td className='initial column-name-data' onClick={() => router.push(`/employee-list/${emp.employee_id}`)}>
+                                    <div className="initial-circle" style={{ backgroundColor: getColor(getInitials(emp.employee)) }}>
+                                        {getInitials(emp.employee)}
+                                    </div>
+                                    <p className='employee-name'>{emp.employee}</p>
+                                </td>
+                                <td className='column-worked-hours'>{emp.worked_hours}</td>
+                                <td className='column-late-hours'>{emp.late_hours}</td>
+                                <td className='column-early-leave-hours'>{emp.early_leave_hours}</td>
+                                <td className='column-overtime'>{emp.over_time}</td>
+                                <td className='column-action'>
+                                    <Link href={'/employee-list/' + emp.employee_id}>
+                                        <FaEye className='eye-icon' />
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <p className='no-data'>No data to show</p>
+                    )}
                 </tbody>
             </table>
         </div>

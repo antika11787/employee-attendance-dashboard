@@ -30,10 +30,11 @@
     }
 
     .table-body {
+      height: 100vh;
       .table-row {
         border-bottom: 1px solid #ddd;
 
-        .column-name,
+        .column-name-data,
         .column-id,
         .column-worked-hours,
         .column-late-hours,
@@ -44,12 +45,16 @@
           text-align: center;
         }
 
+        .column-name-data {
+          cursor: pointer;
+        }
+
         .initial {
           display: flex;
           align-items: center;
           justify-content: flex-start;
           gap: 10px;
-          padding: 15px 0;
+          padding: 12px 0;
 
           .employee-name {
             margin: 0;
@@ -58,14 +63,16 @@
         }
 
         .initial-circle {
-          width: 30px;
-          height: 30px;
+          width: 35px;
+          height: 35px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
           font-weight: bold;
+          font-size: 12px;
+          aspect-ratio: 1/1;
         }
 
         .eye-icon {
@@ -73,6 +80,12 @@
           color: #47466d;
           cursor: pointer;
         }
+      }
+
+      .no-data {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
   }

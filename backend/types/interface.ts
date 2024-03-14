@@ -35,4 +35,16 @@ interface FileResponseRaw {
   "Over Time (H.M)": Number;
 }
 
-export { CustomRequest, IFile, FileResponse, FileResponseRaw, ITotal };
+interface FilterType {
+  price?: { $gte?: number | undefined; $lte?: number | undefined } | undefined;
+  $or?: Array<{ [key: string]: { $regex: string; $options: string } }>;
+}
+
+export {
+  CustomRequest,
+  IFile,
+  FileResponse,
+  FileResponseRaw,
+  ITotal,
+  FilterType,
+};

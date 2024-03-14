@@ -29,14 +29,37 @@ export const GetTotalEmployeeApi = async () => {
     });
 };
 
-export const GetAllEmployeesApi = async (id: string) => {
-  return axiosInstance
-    .get(`/api/v1/employee/get-all-employees/${id}`)
-    .then((response) => {
-      console.log("response", response.data.data);
-      return response.data.data;
-    })
-    .catch((error) => {
-      console.log("error", error);
-    });
+export const GetAllEmployeesApi = async (id: string, searchQuery?: string) => {
+  try {
+    const queryParams: { [key: string]: string | number | undefined } = {
+      search: searchQuery,
+    };
+
+    let queryString = Object.entries(queryParams)
+      .filter(([key, value]) => value !== undefined)
+      .map(([key, value]) => `${key}=${value}`)
+      .join("&");
+
+    // if (filter && filter.category && filter.category.length > 0) {
+    //   filter.category.forEach((category) => {
+    //     queryString = queryString + `&category=${category}`;
+    //   });
+    // }
+
+    const response = await axiosInstance(
+      `/api/v1/employee/get-all-employees/${id}?${queryString}`
+    );
+    const data = response.data;
+    console.log("items", data.data);
+
+    if (data.success === false) {
+      console.log("Error: ", data.message);
+    }
+
+    return data.data;
+  } catch (error: any) {
+    console.error(
+      error.message || "An unknown error occurred during fetching data"
+    );
+  }
 };

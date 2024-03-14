@@ -10,7 +10,7 @@ const Search = ({
     searchbarContainer,
     searchInputContainer,
     searchInput,
-    searchIcon
+    searchIcon,
 }: {
     type?: string;
     placeholder?: string;

@@ -47,7 +47,9 @@ const ReactChart = () => {
     const [total, setTotal] = useState<totalEmployeeResponse | undefined>(undefined);
 
     const [selectedYear, setSelectedYear] = useState('2024');
-    const [selectedMonth, setSelectedMonth] = useState('january');
+    const [selectedMonth, setSelectedMonth] = useState('last 2 days');
+
+    // console.log("selected", selectedMonth)
 
     const handleChangeYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedYear(event.target.value);
@@ -235,7 +237,7 @@ const ReactChart = () => {
                     options={{
                         plugins: {
                             title: {
-                                text: ['Daily Employee Attendance', 'Parameters for January, 2024'],
+                                text: ['Daily Employee Attendance', `Parameters for the ${selectedMonth}`],
                                 display: true,
                                 font: {
                                     size: 14,
@@ -276,7 +278,7 @@ const ReactChart = () => {
                     options={{
                         plugins: {
                             title: {
-                                text: "Daily Employee Attendance Parameters for January, 2024",
+                                text: `Daily Employee Attendance Parameters for the ${selectedMonth}`,
                             },
                         },
                         layout: {

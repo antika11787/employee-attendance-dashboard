@@ -1,5 +1,5 @@
 import './index.scss';
-import { Chart as ChartJS, defaults, Filler } from "chart.js/auto";
+import { ChartDataset, Chart as ChartJS, defaults, Filler } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import januaryCheckIns from '@/data/januaryCheckIns';
 import Helper from '@/utils/helper';
@@ -16,6 +16,10 @@ defaults.plugins.title.font = {
 defaults.plugins.title.color = "black";
 
 ChartJS.register(Filler);
+
+interface CustomChartDataset extends ChartDataset<'line', number[]> {
+    lineTension: number;
+}
 
 const SingleEmployeeCharts = () => {
     const { extractDates } = Helper();
@@ -34,7 +38,7 @@ const SingleEmployeeCharts = () => {
                                 borderColor: "#47466D",
                                 lineTension: 0.5,
                                 fill: true,
-                            },
+                            } as CustomChartDataset,
                         ],
                     }}
                     options={{
@@ -61,7 +65,7 @@ const SingleEmployeeCharts = () => {
                                 borderColor: "#47466D",
                                 lineTension: 0.5,
                                 fill: true,
-                            },
+                            } as CustomChartDataset,
                         ],
                     }}
                     options={{
@@ -88,7 +92,7 @@ const SingleEmployeeCharts = () => {
                                 borderColor: "#47466D",
                                 lineTension: 0.5,
                                 fill: true,
-                            },
+                            } as CustomChartDataset,
                         ],
                     }}
                     options={{
@@ -115,7 +119,7 @@ const SingleEmployeeCharts = () => {
                                 borderColor: "#47466D",
                                 lineTension: 0.5,
                                 fill: true,
-                            },
+                            } as CustomChartDataset,
                         ],
                     }}
                     options={{

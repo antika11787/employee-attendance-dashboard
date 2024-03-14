@@ -12,14 +12,15 @@
     gap: 5px;
 
     .initial-circle {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-weight: bold;
+      font-size: 12px;
     }
   }
 
