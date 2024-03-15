@@ -17,6 +17,7 @@
     "chart-library": "^1.2.1",
     "chart.js": "^4.4.2",
     "chartjs-adapter-moment": "^1.0.1",
+    "date-fns": "^3.5.0",
     "dotenv": "^16.4.5",
     "faker": "^6.6.6",
     "luxon": "^3.4.4",

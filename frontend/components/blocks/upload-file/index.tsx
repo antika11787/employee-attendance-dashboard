@@ -42,10 +42,9 @@ const UploadFile = () => {
                                 formData.append("file", file);
 
                                 const response = await UploadFileApi(formData)
-                                console.log("resp", response._id);
                                 localStorage.setItem("_id", response._id);
+                                dispatch(saveFileID({ _id: response._id }));
                                 router.push('/')
-                                // setFile(null);
                             }}>
                                 <Image
                                     src={'/excel.png'}

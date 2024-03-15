@@ -39,13 +39,6 @@ export const GetAllEmployeesApi = async (id: string, searchQuery?: string) => {
       .filter(([key, value]) => value !== undefined)
       .map(([key, value]) => `${key}=${value}`)
       .join("&");
-
-    // if (filter && filter.category && filter.category.length > 0) {
-    //   filter.category.forEach((category) => {
-    //     queryString = queryString + `&category=${category}`;
-    //   });
-    // }
-
     const response = await axiosInstance(
       `/api/v1/employee/get-all-employees/${id}?${queryString}`
     );
@@ -62,4 +55,16 @@ export const GetAllEmployeesApi = async (id: string, searchQuery?: string) => {
       error.message || "An unknown error occurred during fetching data"
     );
   }
+};
+
+export const GetEmployeeDetailsApi = async (id: string, date: any) => {
+  return axiosInstance
+    .get(`/api/v1/employee/get-employee-details/${id}/${date}`)
+    .then((response) => {
+      console.log("response", response.data.data);
+      return response.data.data;
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
 };

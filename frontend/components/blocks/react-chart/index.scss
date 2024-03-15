@@ -20,6 +20,10 @@
       border-radius: 0.5em;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       overflow-y: auto;
+
+      .date-highlight {
+        background-color: #e0e0e0;
+      }
     }
 
     .params {

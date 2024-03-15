@@ -8,7 +8,7 @@ export const UploadFileApi = async (file: any) => {
   return axiosInstance
     .post("/api/v1/file/upload-file", file)
     .then((response) => {
-      console.log("response", response.data.data);
+      console.log("re", response.data.data);
       toast.success("File uploaded successfully");
       return response.data.data;
     })
@@ -38,6 +38,42 @@ export const totalLateApi = async (id: string, date: any) => {
       id: id,
       date: date,
     })
+    .then((response) => {
+      console.log("response", response.data.data);
+      return response.data.data;
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
+};
+
+export const GetUniqueDatesApi = async (id: string) => {
+  return axiosInstance
+    .get(`/api/v1/file/get-dates/${id}`)
+    .then((response) => {
+      console.log("response", response.data.data);
+      return response.data.data;
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
+};
+
+export const FileHistoryApi = async () => {
+  return axiosInstance
+    .get(`/api/v1/file/get-all-files`)
+    .then((response) => {
+      console.log("response", response.data.data);
+      return response.data.data;
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
+};
+
+export const DeleteFileApi = async (id: string) => {
+  return axiosInstance
+    .delete(`/api/v1/file/delete-file/${id}`)
     .then((response) => {
       console.log("response", response.data.data);
       return response.data.data;

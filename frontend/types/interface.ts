@@ -41,6 +41,14 @@ interface InputFieldProps {
   name: string;
 }
 
+interface FileHistoryData {
+  _id: string;
+  file_name: string;
+  size: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export type {
   FileUpload,
   FileResponse,
@@ -48,4 +56,5 @@ export type {
   FileState,
   totalEmployeeResponse,
   InputFieldProps,
+  FileHistoryData
 };

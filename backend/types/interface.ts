@@ -17,7 +17,9 @@ interface FileResponse {
 }
 
 interface IFile extends Document {
+  file_name: string;
   file: FileResponse[];
+  size: number;
 }
 
 interface ITotal extends Document {

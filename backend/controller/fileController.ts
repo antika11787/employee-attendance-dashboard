@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 const { success, failure } = require("../utils/successError");
 const xlsx = require("xlsx");
 const fileModel = require("../model/file");
-import { FileResponse, FileResponseRaw } from "../types/interface";
+import { FileResponse, FileResponseRaw, IFile } from "../types/interface";
 
 class FileController {
   async fileUpload(req: Request, res: Response): Promise<Response> {
@@ -45,7 +45,9 @@ class FileController {
       );
 
       const newFile = new fileModel({
+        file_name: file.originalname,
         file: workbook_response_trimmed,
+        size: file.size / 1000,
       });
 
       newFile.file.forEach((entry: FileResponse) => {
@@ -108,6 +110,68 @@ class FileController {
       total = late.length;
 
       return res.status(200).send(success("Dates fetched successfully", total));
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send(failure("Something went wrong", error));
+    }
+  }
+
+  async getUniqueDates(req: Request, res: Response): Promise<Response> {
+    try {
+      const { id } = req.params;
+      const file = await fileModel.findById(id);
+
+      if (!file) {
+        return res.status(404).send(failure("File not found"));
+      }
+
+      const uniqueDatesSet = new Set();
+      file.file.forEach((entry: FileResponse) => {
+        uniqueDatesSet.add(entry.check_in);
+      });
+
+      const uniqueDates = Array.from(uniqueDatesSet);
+
+      return res
+        .status(200)
+        .send(success("Unique dates fetched successfully", uniqueDates));
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send(failure("Something went wrong", error));
+    }
+  }
+
+  async fileHistory(req: Request, res: Response): Promise<Response> {
+    try {
+      const files = await fileModel
+        .find({})
+        .select("file_name size createdAt updatedAt")
+        .sort({ createdAt: -1 });
+      if (!files) {
+        return res.status(404).send(failure("No files found"));
+      }
+      console.log(files);
+      return res.status(200).send(success("Files fetched successfully", files));
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send(failure("Something went wrong", error));
+    }
+  }
+
+  async deleteFile(req: Request, res: Response): Promise<Response> {
+    try {
+      const { id } = req.params;
+
+      if (!id) {
+        return res.status(400).send(failure("No file id provided"));
+      }
+      const file = await fileModel.findByIdAndDelete(id);
+
+      if (!file) {
+        return res.status(404).send(failure("File not found"));
+      }
+
+      return res.status(200).send(success("File deleted successfully"));
     } catch (error) {
       console.log(error);
       return res.status(500).send(failure("Something went wrong", error));

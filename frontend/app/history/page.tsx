@@ -1,9 +1,10 @@
+import FileHistory from '@/components/blocks/file-history';
 import './style.scss';
 
 const HistoryPage = () => {
     return (
         <div className='history'>
-            <h1>History</h1>
+            <FileHistory />
         </div>
     )
 }

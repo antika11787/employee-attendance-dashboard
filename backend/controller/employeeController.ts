@@ -70,9 +70,7 @@ class EmployeeController {
               emp.employee
                 .toLowerCase()
                 .includes(search.toString().toLowerCase()) ||
-              emp.employee_id
-                .toLowerCase()
-                .includes(search.toString().toLowerCase())
+              emp.employee_id.includes(search.toString())
           )
         : files.file;
 
@@ -95,31 +93,66 @@ class EmployeeController {
       filteredFiles.forEach((emp: any) => {
         const employeeId = emp.employee_id;
         const count = employeeCountMap.get(employeeId)!;
-        if (!employeeAverages.find((e) => e.employee_id === employeeId)) {
+        const avgWorkedHours = (emp.worked_hours / count).toFixed(2);
+        const avgLateHours = (emp.late_hours / count).toFixed(2);
+        const avgEarlyLeaveHours = (emp.early_leave_hours / count).toFixed(2);
+        const avgOverTime = (emp.over_time / count).toFixed(2);
+
+        const existingEmployee = employeeAverages.find(
+          (e) => e.employee_id === employeeId
+        );
+        if (!existingEmployee) {
           employeeAverages.push({
             employee: emp.employee,
             employee_id: emp.employee_id,
-            worked_hours: emp.worked_hours / count,
-            late_hours: emp.late_hours / count,
-            early_leave_hours: emp.early_leave_hours / count,
-            over_time: emp.over_time / count,
+            worked_hours: parseFloat(avgWorkedHours),
+            late_hours: parseFloat(avgLateHours),
+            early_leave_hours: parseFloat(avgEarlyLeaveHours),
+            over_time: parseFloat(avgOverTime),
           });
         } else {
           const employeeIndex = employeeAverages.findIndex(
             (e) => e.employee_id === employeeId
           );
           employeeAverages[employeeIndex].worked_hours +=
-            emp.worked_hours / count;
-          employeeAverages[employeeIndex].late_hours += emp.late_hours / count;
+            parseFloat(avgWorkedHours);
+          employeeAverages[employeeIndex].late_hours +=
+            parseFloat(avgLateHours);
           employeeAverages[employeeIndex].early_leave_hours +=
-            emp.early_leave_hours / count;
-          employeeAverages[employeeIndex].over_time += emp.over_time / count;
+            parseFloat(avgEarlyLeaveHours);
+          employeeAverages[employeeIndex].over_time += parseFloat(avgOverTime);
         }
       });
 
       return res
         .status(200)
         .send(success("Files fetched successfully", employeeAverages));
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send(failure("Something went wrong", error));
+    }
+  }
+
+  async getEmployeeDetails(req: Request, res: Response): Promise<Response> {
+    try {
+      const { id, date } = req.params;
+      if (!id || !date) {
+        return res.status(400).send(failure("No id or date provided"));
+      }
+
+      const files = await fileModel.findById(id);
+
+      if (!files) {
+        return res.status(400).send(failure("No data found"));
+      }
+
+      const employees = files.file.filter((data: FileResponse) => {
+        return data.check_in === date;
+      });
+
+      return res
+        .status(200)
+        .send(success("Files fetched successfully", employees));
     } catch (error) {
       console.log(error);
       return res.status(500).send(failure("Something went wrong", error));

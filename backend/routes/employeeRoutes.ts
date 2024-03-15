@@ -10,5 +10,6 @@ routes.patch(
 );
 routes.get("/get-total-employee", employeeController.getTotalEmployees);
 routes.get("/get-all-employees/:id", employeeController.getAllEmployees);
+routes.get("/get-employee-details/:id/:date", employeeController.getEmployeeDetails);
 
 export = routes;

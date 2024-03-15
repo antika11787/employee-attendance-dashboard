@@ -15,10 +15,10 @@ import 'react-calendar/dist/Calendar.css';
 import "./index.scss";
 import Clock from "@/components/elements/clock";
 import { BiSolidEditAlt } from "react-icons/bi";
-import { totalCheckInApi, totalLateApi } from "@/apiEndpoints/fileApi";
-import { GetTotalEmployeeApi, UpdateTotalEmployeeApi } from "@/apiEndpoints/employeeApi";
+import { totalCheckInApi, totalLateApi, GetUniqueDatesApi } from "@/apiEndpoints/fileApi";
+import { GetTotalEmployeeApi, UpdateTotalEmployeeApi, GetEmployeeDetailsApi } from "@/apiEndpoints/employeeApi";
 import { useSelector } from "react-redux";
-import { FileState, totalEmployeeResponse } from "@/types/interface";
+import { FileResponse, FileState, totalEmployeeResponse } from "@/types/interface";
 import EditModal from "../editModal";
 
 defaults.maintainAspectRatio = false;
@@ -45,15 +45,10 @@ const ReactChart = () => {
     const [editModalTotal, setEditModalTotal] =
         useState<totalEmployeeResponse | null>(null);
     const [total, setTotal] = useState<totalEmployeeResponse | undefined>(undefined);
+    const [dates, setDates] = useState<string[]>([]);
+    const [employee, setEmployee] = useState<FileResponse[]>([]);
 
-    const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('last 2 days');
-
-    // console.log("selected", selectedMonth)
-
-    const handleChangeYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedYear(event.target.value);
-    };
 
     const handleChangeMonth = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedMonth(event.target.value);
@@ -64,35 +59,35 @@ const ReactChart = () => {
     const averageEarlyLeaveHour = calculateAverageTime(januaryCheckIns, "Early Leave Hours (H.M)");
     const averageOvertime = calculateAverageTime(januaryCheckIns, "Over Time (H.M)");
 
-    const [options, setOptions] = useState<AgChartOptions>({
-        data: HighLow.map((data) => {
-            return {
-                label: data.label,
-                low: data.low,
-                high: data.high,
-            }
-        }),
-        title: {
-            text: `Employee Attendance for ${HighLow[0].label}`,
-            fontWeight: 'bold',
-        },
-        subtitle: {
-            text: "Maximum Early and Late Check in (in minutes) for January, 2024",
-        },
-        series: [
-            {
-                type: "range-bar",
-                xKey: "label",
-                yLowKey: "low",
-                yHighKey: "high",
-                fill: "#47466D",
-                stroke: "#47466D",
-            },
-        ],
-        background: {
-            fill: "transparent",
-        },
-    });
+    // const [options, setOptions] = useState<AgChartOptions>({
+    //     data: HighLow.map((data) => {
+    //         return {
+    //             label: data.label,
+    //             low: data.low,
+    //             high: data.high,
+    //         }
+    //     }),
+    //     title: {
+    //         text: `Employee Attendance for ${HighLow[0].label}`,
+    //         fontWeight: 'bold',
+    //     },
+    //     subtitle: {
+    //         text: "Maximum Early and Late Check in (in minutes) for January, 2024",
+    //     },
+    //     series: [
+    //         {
+    //             type: "range-bar",
+    //             xKey: "label",
+    //             yLowKey: "low",
+    //             yHighKey: "high",
+    //             fill: "#47466D",
+    //             stroke: "#47466D",
+    //         },
+    //     ],
+    //     background: {
+    //         fill: "transparent",
+    //     },
+    // });
 
     const openEditModal = () => {
         setIsEditModalOpen(true);
@@ -112,14 +107,16 @@ const ReactChart = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [checkInData, lateData, totaldata] = await Promise.all([
+                const [checkInData, lateData, totaldata, employeeDetails] = await Promise.all([
                     totalCheckInApi(fileId, formattedDate),
                     totalLateApi(fileId, formattedDate),
-                    GetTotalEmployeeApi()
+                    GetTotalEmployeeApi(),
+                    GetEmployeeDetailsApi(fileId, formattedDate),
                 ]);
                 setTotalCheckIn(checkInData);
                 setTotalLate(lateData);
                 setTotal(totaldata);
+                setEmployee(employeeDetails);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -127,11 +124,32 @@ const ReactChart = () => {
         fetchData();
     }, [value]);
 
+    useEffect(() => {
+        GetUniqueDatesApi(fileId).then((data) => {
+            setDates(data);
+        })
+    }, [fileId]);
+
     return (
         <div className="home-container">
             <div className="top-container">
                 <div className="calendar custom-scrollbar">
-                    <Calendar onChange={onChange} value={value} className={"custom-calendar"} />
+                    <Calendar
+                        onChange={onChange}
+                        value={value}
+                        className={"custom-calendar"}
+                        tileClassName={({ date, view }) => {
+                            const day = date.getDate();
+                            const month = date.getMonth() + 1;
+                            const year = date.getFullYear();
+                            const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+
+                            if (view === "month" && dates?.includes(formattedDate)) {
+                                return 'date-highlight';
+                            }
+                            return '';
+                        }}
+                    />
                 </div>
                 <div className="params">
                     <div className="params-box check-in">
@@ -177,7 +195,69 @@ const ReactChart = () => {
                 </div>
             </div>
             <div className="data-card check-in-chart">
-                <AgChartsReact className="ag-chart" options={options} />
+                {employee.length <= 0 ? (
+                    <div style={{ textAlign: "center", marginTop: "30px" }}>
+                        <h3>Daily Employee Attendance Parameters for {formattedDate}</h3>
+                        <p style={{ textAlign: "center", marginTop: "20px", color: "red" }}>No data available for this date.</p>
+                    </div>
+                ) : (
+                    <Bar
+                        data={{
+                            labels: employee.slice(0, 10).map((data) => data.employee_id),
+                            datasets: [
+                                {
+                                    label: "Late hours",
+                                    data: employee.slice(0, 10).map((data) => data.late_hours),
+                                    backgroundColor: "#3D84A7",
+                                    borderColor: "#3D84A7",
+                                },
+                                {
+                                    label: "Early Leave hours",
+                                    data: employee.slice(0, 10).map((data) => data.early_leave_hours),
+                                    backgroundColor: "#46CDCF",
+                                    borderColor: "#46CDCF",
+                                },
+                                {
+                                    label: "Overtime",
+                                    data: employee.slice(0, 10).map((data) => data.over_time),
+                                    backgroundColor: "#ABEDD8",
+                                    borderColor: "#ABEDD8",
+                                },
+                            ],
+                        }}
+                        options={{
+                            indexAxis: 'x' as const,
+                            elements: {
+                                bar: {
+                                    borderWidth: 0,
+                                    borderRadius: 3.5
+                                },
+                            },
+                            plugins: {
+                                title: {
+                                    text: `Daily Employee Attendance Parameters for ${formattedDate}`,
+                                },
+                            },
+                            layout: {
+                                padding: 20
+                            },
+                            scales: {
+                                x: {
+                                    grid: {
+                                        display: false
+                                    }
+                                },
+                                y: {
+                                    grid: {
+                                        display: false
+                                    }
+                                }
+                            }
+                        }}
+                    />
+                )}
+
+                {/* <AgChartsReact className="ag-chart" options={options} /> */}
             </div>
             <div className="data-card check-in-doughnut">
                 <Doughnut
