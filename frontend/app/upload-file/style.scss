@@ -1,0 +1,28 @@
+@use "@/styles/_mixins.scss" as *;
+
+.upload-file {
+  height: 100vh;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+
+  .upload-file-heading-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    .upload-file-heading {
+      font-weight: 700;
+    }
+
+    .upload-icon {
+      color: #369dd1;
+      font-size: 20px;
+    }
+  }
+}
