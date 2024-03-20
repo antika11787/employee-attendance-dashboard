@@ -63,6 +63,10 @@ interface AuthResponse {
   token?: string;
 }
 
+interface IAuthMiddleware extends Request {
+  user: IAuth;
+}
+
 export {
   CustomRequest,
   IFile,
@@ -73,4 +77,5 @@ export {
   IAuth,
   IUser,
   AuthResponse,
+  IAuthMiddleware,
 };

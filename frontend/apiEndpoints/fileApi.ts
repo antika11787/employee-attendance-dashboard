@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const UploadFileApi = async (file: any) => {
-  return axiosInstance
+  return axiosInstanceToken
     .post("/api/v1/file/upload-file", file)
     .then((response) => {
       console.log("re", response.data.data);
@@ -59,20 +59,37 @@ export const GetUniqueDatesApi = async (id: string) => {
     });
 };
 
-export const FileHistoryApi = async () => {
-  return axiosInstance
-    .get(`/api/v1/file/get-all-files`)
-    .then((response) => {
-      console.log("response", response.data.data);
-      return response.data.data;
-    })
-    .catch((error) => {
-      console.log("error", error);
-    });
+export const FileHistoryApi = async (searchQuery?: string) => {
+  try {
+    const queryParams: { [key: string]: string | number | undefined } = {
+      searchFiles: searchQuery,
+    };
+
+    let queryString = Object.entries(queryParams)
+      .filter(([key, value]) => value !== undefined)
+      .map(([key, value]) => `${key}=${value}`)
+      .join("&");
+    const response = await axiosInstanceToken(
+      `/api/v1/file/get-all-files?${queryString}`
+    );
+    const data = response.data;
+    console.log("items", data.data);
+
+    if (data.success === false) {
+      console.log("Error: ", data.message);
+    }
+
+    return data.data;
+  } catch (error: any) {
+    console.error(
+      error.message || "An unknown error occurred during fetching data"
+    );
+    throw error;
+  }
 };
 
 export const DeleteFileApi = async (id: string) => {
-  return axiosInstance
+  return axiosInstanceToken
     .delete(`/api/v1/file/delete-file/${id}`)
     .then((response) => {
       console.log("response", response.data.data);

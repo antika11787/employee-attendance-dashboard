@@ -47,15 +47,10 @@ const Comparison = () => {
         setSelectedValue(event.target.value);
     };
 
-    const averageWorkHour = calculateAverageTime(januaryCheckIns, "Worked Hours (H.M)");
-    const averageLateHour = calculateAverageTime(januaryCheckIns, "Late Hours (H.M)");
-    const averageEarlyLeaveHour = calculateAverageTime(januaryCheckIns, "Early Leave Hours (H.M)");
-    const averageOvertime = calculateAverageTime(januaryCheckIns, "Over Time (H.M)");
-
     return (
         <div className='comparison-charts'>
             <div className='comparison-header'>
-                <h2>Compare Performace for Alice</h2>
+                <h2>Compare Performace</h2>
                 <div className='filter-wrapper'>
                     <div className='filters'>
                         <BsFilterRight className='filter-icon' />

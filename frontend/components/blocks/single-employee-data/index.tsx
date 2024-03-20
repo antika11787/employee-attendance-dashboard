@@ -36,8 +36,6 @@ const SingleEmployeeData = () => {
         fetchData();
     }, [])
 
-    console.log("ksbda", data)
-
     return (
         <div className="single-employee-data">
             <div className='image-name'>

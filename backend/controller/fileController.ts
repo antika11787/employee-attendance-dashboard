@@ -80,7 +80,7 @@ class FileController {
 
       const files = await fileModel.findById(id);
 
-      const checkIns = files.file.filter((data: FileResponse) => {
+      const checkIns = files?.file?.filter((data: FileResponse) => {
         return data.check_in === date;
       });
 
@@ -103,7 +103,7 @@ class FileController {
 
       const files = await fileModel.findById(id);
 
-      const late = files.file.filter((data: FileResponse) => {
+      const late = files?.file?.filter((data: FileResponse) => {
         return (data.late_hours as number) > 0 && data.check_in === date;
       });
 
@@ -119,14 +119,14 @@ class FileController {
   async getUniqueDates(req: Request, res: Response): Promise<Response> {
     try {
       const { id } = req.params;
-      const file = await fileModel.findById(id);
+      const files = await fileModel.findById(id);
 
-      if (!file) {
+      if (!files) {
         return res.status(404).send(failure("File not found"));
       }
 
       const uniqueDatesSet = new Set();
-      file.file.forEach((entry: FileResponse) => {
+      files?.file?.forEach((entry: FileResponse) => {
         uniqueDatesSet.add(entry.check_in);
       });
 
@@ -143,6 +143,7 @@ class FileController {
 
   async fileHistory(req: Request, res: Response): Promise<Response> {
     try {
+      const { searchFiles } = req.query;
       const files = await fileModel
         .find({})
         .select("file_name size createdAt updatedAt")
@@ -150,8 +151,17 @@ class FileController {
       if (!files) {
         return res.status(404).send(failure("No files found"));
       }
-      console.log(files);
-      return res.status(200).send(success("Files fetched successfully", files));
+
+      const filteredFiles = searchFiles
+        ? files.filter((file: any) => {
+            return file.file_name
+              .toLowerCase()
+              .includes(searchFiles.toString().toLowerCase());
+          })
+        : files;
+      return res
+        .status(200)
+        .send(success("Files fetched successfully", filteredFiles));
     } catch (error) {
       console.log(error);
       return res.status(500).send(failure("Something went wrong", error));

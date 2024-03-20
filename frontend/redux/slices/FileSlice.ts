@@ -18,9 +18,16 @@ const fileSlice = createSlice({
         localStorage.setItem("_id", action.payload._id);
       }
     },
+
+    removeFileID: (state) => {
+      state._id = "";
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("_id");
+      }
+    },
   },
 });
 
-export const { saveFileID } = fileSlice.actions;
+export const { saveFileID, removeFileID } = fileSlice.actions;
 
 export default fileSlice.reducer;

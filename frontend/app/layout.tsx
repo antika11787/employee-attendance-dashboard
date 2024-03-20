@@ -29,14 +29,8 @@ export default function RootLayout({
         <ToastContainer position="bottom-center" />
         <Provider store={store}>
           <PersistGate persistor={persistor}>
-            <div className="dashboard">
-              <div className="sidebar-wrapper">
-                <Sidebar />
-              </div>
-              <div className="header-children">
-                <Header />
-                {children}
-              </div>
+            <div>
+              {children}
             </div>
           </PersistGate>
         </Provider>

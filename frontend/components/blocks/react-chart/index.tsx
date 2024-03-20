@@ -1,15 +1,12 @@
 'use client';
 
-import React, { useState, ChangeEventHandler, useEffect } from "react";
-import { Chart as ChartJS, registerables, defaults } from "chart.js/auto";
+import React, { useState, useEffect } from "react";
+import { Chart as ChartJS, registerables, defaults, PluginOptionsByType } from "chart.js/auto";
 import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 import Image from "next/image";
 import Helper from "@/utils/helper";
 import HighLow from "@/data/highLow";
 import januaryCheckIns from "@/data/januaryCheckIns";
-import { AgChartsReact } from "ag-charts-react";
-import "ag-charts-enterprise";
-import { AgChartOptions } from "ag-charts-enterprise";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import "./index.scss";
@@ -18,7 +15,7 @@ import { BiSolidEditAlt } from "react-icons/bi";
 import { totalCheckInApi, totalLateApi, GetUniqueDatesApi } from "@/apiEndpoints/fileApi";
 import { GetTotalEmployeeApi, UpdateTotalEmployeeApi, GetEmployeeDetailsApi } from "@/apiEndpoints/employeeApi";
 import { useSelector } from "react-redux";
-import { FileResponse, FileState, totalEmployeeResponse } from "@/types/interface";
+import { FileResponse, FileState, UserState, totalEmployeeResponse } from "@/types/interface";
 import EditModal from "../editModal";
 
 defaults.maintainAspectRatio = false;
@@ -34,6 +31,7 @@ defaults.plugins.title.color = "black";
 
 const ReactChart = () => {
     const fileId = useSelector((state: FileState) => state.file._id);
+    const token = useSelector((state: UserState) => state.user.token);
     const { calculateAverageTime } = Helper();
     const [isClient, setIsClient] = useState<boolean>(false);
     const [value, onChange] = useState<Value>(new Date());
@@ -54,40 +52,9 @@ const ReactChart = () => {
         setSelectedMonth(event.target.value);
     };
 
-    const averageWorkHour = calculateAverageTime(januaryCheckIns, "Worked Hours (H.M)");
     const averageLateHour = calculateAverageTime(januaryCheckIns, "Late Hours (H.M)");
     const averageEarlyLeaveHour = calculateAverageTime(januaryCheckIns, "Early Leave Hours (H.M)");
     const averageOvertime = calculateAverageTime(januaryCheckIns, "Over Time (H.M)");
-
-    // const [options, setOptions] = useState<AgChartOptions>({
-    //     data: HighLow.map((data) => {
-    //         return {
-    //             label: data.label,
-    //             low: data.low,
-    //             high: data.high,
-    //         }
-    //     }),
-    //     title: {
-    //         text: `Employee Attendance for ${HighLow[0].label}`,
-    //         fontWeight: 'bold',
-    //     },
-    //     subtitle: {
-    //         text: "Maximum Early and Late Check in (in minutes) for January, 2024",
-    //     },
-    //     series: [
-    //         {
-    //             type: "range-bar",
-    //             xKey: "label",
-    //             yLowKey: "low",
-    //             yHighKey: "high",
-    //             fill: "#47466D",
-    //             stroke: "#47466D",
-    //         },
-    //     ],
-    //     background: {
-    //         fill: "transparent",
-    //     },
-    // });
 
     const openEditModal = () => {
         setIsEditModalOpen(true);
@@ -130,7 +97,17 @@ const ReactChart = () => {
         })
     }, [fileId]);
 
-    return (
+    return !token ? (
+        <div className='no-auth-container'>
+            <Image src="/no-auth.png" alt="no-auth" width={200} height={200} />
+            <p className='no-auth'>Please login to view the graphs</p>
+        </div>
+    ) : !fileId ? (
+        <div className="no-file">
+            <Image src="/no-file.png" alt="No file" width={200} height={200} />
+            <p className="no-file-text">No file selected yet...</p>
+        </div>
+    ) : (
         <div className="home-container">
             <div className="top-container">
                 <div className="calendar custom-scrollbar">
@@ -256,8 +233,6 @@ const ReactChart = () => {
                         }}
                     />
                 )}
-
-                {/* <AgChartsReact className="ag-chart" options={options} /> */}
             </div>
             <div className="data-card check-in-doughnut">
                 <Doughnut

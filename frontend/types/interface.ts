@@ -69,11 +69,17 @@ interface SelectOptionProps {
 }
 
 interface UserState {
-    [x: string]: any;
-    username: string;
-    email: string;
-    token: string;
-    role: string;
+  [x: string]: any;
+  username: string;
+  email: string;
+  token: string;
+  role: string;
+}
+
+interface updateContentState {
+  content: {
+    contentLength: number;
+  };
 }
 
 export type {
@@ -88,4 +94,5 @@ export type {
   FormDataLogin,
   SelectOptionProps,
   UserState,
+  updateContentState,
 };

@@ -5,9 +5,7 @@ import { LuCalendarClock } from "react-icons/lu";
 import { LuFileX, LuFileStack, LuUsers2 } from "react-icons/lu";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
-import { AgChartsReact } from "ag-charts-react";
 import "ag-charts-enterprise";
-
 import "./index.scss";
 
 const Sidebar = () => {

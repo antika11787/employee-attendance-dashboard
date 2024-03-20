@@ -20,8 +20,15 @@ export default function AuthLayout({
   return (
     <html lang="en">
       <body>
+        <ToastContainer position="bottom-center" />
         <div className="dashboard">
-          {children}
+          <div className="sidebar-wrapper">
+            <Sidebar />
+          </div>
+          <div className="header-children">
+            <Header />
+            {children}
+          </div>
         </div>
       </body>
     </html>

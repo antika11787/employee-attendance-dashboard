@@ -1,7 +1,9 @@
 import Login from "@/components/blocks/login"
 
 const LoginPage = () => {
-    <Login />
+    return (
+        <Login />
+    )
 }
 
 export default LoginPage;

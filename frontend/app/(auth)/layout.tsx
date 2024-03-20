@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Sidebar from "@/components/layout/sidebar";
-import Header from "@/components/layout/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +18,8 @@ export default function AuthLayout({
   return (
     <html lang="en">
       <body>
-        <div className="dashboard">
+        <ToastContainer position="bottom-center" />
+        <div>
           {children}
         </div>
       </body>

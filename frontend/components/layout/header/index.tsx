@@ -18,6 +18,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const user = useSelector((state: UserState) => state.user);
     const fileId = useSelector((state: FileState) => state.file._id);
+    const token = useSelector((state: UserState) => state.user.token);
     const searchRef = useRef<HTMLDivElement>(null);
     const [employee, setEmployee] = useState<FileResponse[]>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -89,20 +90,36 @@ const Header = () => {
                         </div>
                     )
                 )}
+
                 <div className='header-content'>
-                    <div className='image-content'>
-                        <Image src="/user.png" alt="check-in" width={38} height={38} />
-                        <div className='admin-info'>
-                            <p className='admin-name'>{user.username}</p>
-                            <p className='admin-role'>{user.role}</p>
-                        </div>
-                    </div>
-                    <div className='vertical-line'></div>
-                    <RiShutDownLine className='shut-down'
-                        onClick={() => {
-                            dispatch(removeLogin());
-                            router.push('/login');
-                        }} />
+                    {token ? (
+                        <>
+                            <div className='image-content'>
+                                <Image src="/user.png" alt="check-in" width={38} height={38} />
+                                <div className='admin-info'>
+                                    <p className='admin-name'>{user.username}</p>
+                                    <p className='admin-role'>{user.role}</p>
+                                </div>
+                            </div>
+                            <div className='vertical-line'></div>
+                            <RiShutDownLine className='shut-down'
+                                onClick={() => {
+                                    dispatch(removeLogin());
+                                    router.push('/login');
+                                }} />
+                        </>
+                    ) : (
+                        <>
+                            <button className='login-btn'
+                                onClick={() => router.push('/login')}>
+                                Login
+                            </button>
+                            <button className='signup-btn'
+                                onClick={() => router.push('/signup')}>
+                                Sign Up
+                            </button>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

@@ -1,9 +1,8 @@
 .file-history-container {
+  height: 100%;
   width: 92%;
-  height: auto;
-  margin: 0 20px;
+  margin-top: 30px;
   border-radius: 0.5em;
-  padding: 5px 0;
 
   .file-history-heading-container {
     display: flex;
@@ -37,7 +36,7 @@
           outline: none;
           width: 100%;
           background-color: transparent;
-          color: #ececec;
+          color: #000;
           font-size: 16px;
         }
 
@@ -107,4 +106,50 @@
       }
     }
   }
+}
+
+.delete-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .delete-modal-description {
+    color: #7e7e7e;
+    font-size: 15px;
+  }
+
+  .delete-modal-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    .yes-button,
+    .no-button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      // background-color: #007bff;
+      padding: 8px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .yes-button {
+      background-color: #50c878;
+    }
+
+    .no-button {
+      background-color: #e93042;
+    }
+  }
+}
+
+.close-button {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

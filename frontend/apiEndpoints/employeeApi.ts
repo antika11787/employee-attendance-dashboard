@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const UpdateTotalEmployeeApi = async (data: any) => {
-  return axiosInstance
+  return axiosInstanceToken
     .patch("/api/v1/employee/update-total-employees", data)
     .then((response) => {
       console.log("response", response.data.data);
@@ -13,6 +13,7 @@ export const UpdateTotalEmployeeApi = async (data: any) => {
       return response.data.data;
     })
     .catch((error) => {
+      toast.error(error.response.data.message);
       console.log("error", error);
     });
 };
@@ -39,7 +40,7 @@ export const GetAllEmployeesApi = async (id: string, searchQuery?: string) => {
       .filter(([key, value]) => value !== undefined)
       .map(([key, value]) => `${key}=${value}`)
       .join("&");
-    const response = await axiosInstance(
+    const response = await axiosInstanceToken(
       `/api/v1/employee/get-all-employees/${id}?${queryString}`
     );
     const data = response.data;
@@ -58,7 +59,7 @@ export const GetAllEmployeesApi = async (id: string, searchQuery?: string) => {
 };
 
 export const GetEmployeeDetailsApi = async (id: string, date: any) => {
-  return axiosInstance
+  return axiosInstanceToken
     .get(`/api/v1/employee/get-employee-details/${id}/${date}`)
     .then((response) => {
       console.log("response", response.data.data);

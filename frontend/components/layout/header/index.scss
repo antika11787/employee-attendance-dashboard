@@ -114,5 +114,33 @@
       color: #ecececc5;
       cursor: pointer;
     }
+
+    .login-btn,
+    .signup-btn {
+      // width: 90px;
+      // height: 40px;
+      cursor: pointer;
+      font-size: 15px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 5px 0;
+      border: none;
+      outline: none;
+      text-align: center;
+      background-color: transparent;
+      color: #ecececc5;
+    }
+
+    .login-btn:hover,
+    .signup-btn:hover {
+      color: #ffffff;
+    }
+
+    .login-btn::after,
+    .signup-btn::after {
+      content: ">";
+    }
   }
 }

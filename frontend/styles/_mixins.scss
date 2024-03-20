@@ -1,5 +1,6 @@
 @mixin page-body {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,5 +8,5 @@
   align-content: center;
   gap: 2vw;
   flex-wrap: wrap;
-  background-color: #ececec;
+  background-color: #ffffff;
 }

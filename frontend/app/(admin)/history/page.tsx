@@ -1,9 +1,8 @@
 import FileHistory from '@/components/blocks/file-history';
-import './style.scss';
 
 const HistoryPage = () => {
     return (
-        <div className='history'>
+        <div className='page-container'>
             <FileHistory />
         </div>
     )

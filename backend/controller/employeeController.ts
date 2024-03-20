@@ -52,7 +52,7 @@ class EmployeeController {
   async getAllEmployees(req: Request, res: Response): Promise<Response> {
     try {
       const { id } = req.params;
-      const { search } = req.query; // Extract search query parameter
+      const { search } = req.query;
 
       if (!id) {
         return res.status(400).send(failure("No file id provided"));
